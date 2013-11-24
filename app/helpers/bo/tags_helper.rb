@@ -1,0 +1,2 @@
+module Bo::TagsHelper
+end

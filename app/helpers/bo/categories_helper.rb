@@ -1,0 +1,2 @@
+module Bo::CategoriesHelper
+end

@@ -13,3 +13,7 @@ en:
     add_new: Add new
     list_of_users: List of users
     list_of_tags: List of tags
+    users: Users
+    posts: Posts
+    tags: Tags
+    categories: Categories

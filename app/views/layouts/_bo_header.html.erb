@@ -1,0 +1,21 @@
+<div style="float: left;">
+  <p>
+    <%= link_to I18n.tbtn('posts'), bo_posts_path %> | 
+    <%= link_to I18n.tbtn('tags'), bo_tags_path %> | 
+    <%= link_to I18n.tbtn('categories'), bo_categories_path %> | 
+    <%= link_to I18n.tbtn('users'), bo_users_path %>
+  </p>
+</div>
+<div style="float: right;">
+  <p>
+    <% if current_user %>
+        <%= tview('signed_as', :email => current_user.email) %>
+        <%= link_to I18n.tbtn('sign_out'), logout_path %>, 
+        <%= link_to I18n.tbtn('public_home'), root_path %>
+    <% else %>
+        <%= link_to I18n.tbtn('sign_in'), login_path %>
+    <% end %>
+  </p>
+</div>
+
+<div style="clear: both;"></div>

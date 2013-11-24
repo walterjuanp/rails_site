@@ -1,0 +1,13 @@
+<div style="float: right;">
+  <p>
+    <% if current_user %>
+        <%= tview('signed_as', :email => current_user.email) %>
+        <%= link_to I18n.tbtn('sign_out'), logout_path %>, 
+        <%= link_to I18n.tbtn('backoffice'), bo_users_path %>
+    <% else %>
+        <%= link_to I18n.tbtn('sign_in'), login_path %>
+    <% end %>
+  </p>
+</div>
+
+<div style="clear: both;"></div>

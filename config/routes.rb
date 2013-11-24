@@ -8,6 +8,7 @@ Site::Application.routes.draw do
   
   namespace :bo do
     resources :users
+    resources :tags
   end
 
   

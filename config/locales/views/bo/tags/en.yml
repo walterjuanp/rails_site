@@ -1,0 +1,10 @@
+
+en:
+  views:
+    bo:
+      tags:
+        list_of_tags: List of tags
+        user: Tags
+        new_tag: New tag
+        edit_tag: Edit tag
+      

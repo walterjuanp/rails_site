@@ -20,6 +20,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :last_login_ip                                      # optional, see Authlogic::Session::MagicColumns
       
       # Custom columns
+      t.string  :first_name
+      t.string  :last_name
+      t.string  :nickname
+      t.text    :bio
       t.timestamps
     end
   end

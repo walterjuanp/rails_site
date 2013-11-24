@@ -6,5 +6,8 @@ en:
     attributes:
       user:
         email: Email
+        first_name: First name
+        last_name: Last name
+        bio: Biography
         password: Password
         password_confirmation: Password confirmation

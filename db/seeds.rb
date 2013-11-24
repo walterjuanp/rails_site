@@ -12,7 +12,8 @@ user.email = 'a@a.com'
 user.password = password
 user.password_confirmation = password
 if user.save
-  puts "== User created with email #{user.email} and password #{password}"
+  puts "== User created with login email #{user.email} and password #{password}"
 else
   puts "== ERROR :: User can't created with email #{user.email} and password #{password}"
+  puts "==          Errors: #{user.errors.full_messages}"
 end

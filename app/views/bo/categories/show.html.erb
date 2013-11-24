@@ -1,0 +1,5 @@
+<h1><%= tview('category') %></h1>
+<%= link_to I18n.tbtn('list_of_categories'), bo_categories_path %>
+<p>name: <%= @category.name %></p>
+<p>slug: <%= @category.slug %></p>
+<p>description: <%= @category.description %></p>

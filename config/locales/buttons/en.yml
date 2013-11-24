@@ -13,7 +13,9 @@ en:
     add_new: Add new
     list_of_users: List of users
     list_of_tags: List of tags
+    list_of_categories: List of categories
+    list_of_posts: List of posts
     users: Users
-    posts: Posts
     tags: Tags
     categories: Categories
+    posts: Posts

@@ -1,0 +1,10 @@
+
+en:
+  activerecord:
+    models:
+      category: Category
+    attributes:
+      category:
+        name: Name
+        slug: Slug
+        description: Description

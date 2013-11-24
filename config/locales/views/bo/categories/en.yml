@@ -1,0 +1,10 @@
+
+en:
+  views:
+    bo:
+      categories:
+        list_of_categories: List of categories
+        categories: Categories
+        new_category: New category
+        edit_category: Edit category
+      

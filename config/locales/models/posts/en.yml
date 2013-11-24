@@ -1,0 +1,12 @@
+
+en:
+  activerecord:
+    models:
+      post: Post
+    attributes:
+      post:
+        title: Title
+        body_mk: Body in Markdown
+        body_html: Body in HTM
+        status: Status
+        published_at: Publication date

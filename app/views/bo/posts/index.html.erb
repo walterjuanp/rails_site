@@ -1,0 +1,15 @@
+<h1><%= tview('list_of_posts') %></h1>
+<%= link_to I18n.tbtn('add_new'), new_bo_post_path %>
+<ul>
+  <% for post in @posts %>
+    <li><p>
+      <%= post.status %>,
+      <%= post.title %>, 
+      <%= link_to I18n.tbtn('show'), bo_post_path(post) %>
+      <%= link_to I18n.tbtn('edit'), edit_bo_post_path(post) %>,
+      <%= link_to I18n.tbtn('destroy'), bo_post_path(post), :confirm => I18n.tmsg('are_you_sure'), :method => :delete %>
+    </p></li>
+  <% end %>
+</ul>
+
+<%= will_paginate @posts %>

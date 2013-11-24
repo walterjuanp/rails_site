@@ -11,6 +11,13 @@ end
 
 module Site
   class Application < Rails::Application
+    # Set SimpleEnum works with prefix. Example:
+    # jane is User with gender attribute and this can be male or female
+    # jane.female? ====> jane.gender_female?
+    SimpleEnum.default_options[:prefix] = true
+    # Set :whiny to false for not raise an exception in validations
+    SimpleEnum.default_options[:whiny] = false
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

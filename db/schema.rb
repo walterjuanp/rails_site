@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20131124175909) do
     t.string   "title"
     t.text     "body_md"
     t.text     "body_html"
-    t.integer  "status"
+    t.string   "status_cd"
     t.datetime "published_at"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

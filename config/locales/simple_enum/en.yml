@@ -1,0 +1,9 @@
+
+en:
+  activerecord:
+    enums:
+      post:               # the Model, as Post.class.name.underscore
+        statuses:         # pluralized version of :status
+          published: Published
+          pending_review: Pending of review
+          draft: Draft

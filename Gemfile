@@ -21,6 +21,9 @@ gem "authlogic", "~> 3.3.0"
 # pagination links in Rails, Sinatra and Merb web apps.
 gem "will_paginate", "~> 3.0.5"
 
+# Provides enum-like fields for ActiveRecord, ActiveModel and Mongoid models.
+gem "simple_enum", "~> 1.6.7"
+
 # kramdown is yet-another-markdown-parser but fast, pure Ruby, using a strict 
 # syntax definition and supporting several common extensions.
 gem "kramdown", "~> 1.2.0"

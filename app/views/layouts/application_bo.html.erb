@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Site - BackOffice</title>
+  <%= stylesheet_link_tag    "bo/application", :media => "all" %>
+  <%= javascript_include_tag "bo/application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div>
+  <% if notice %>
+    <p><%= tview('notice') %>: <%= notice %></p>
+  <% end %>
+  
+  <%= render 'shared/locale_links' %>
+
+  <% if current_user %>
+    <p>
+      <%= tview('signed_as', :email => current_user.email) %>
+      <%= link_to I18n.tbtn('sign_out'), logout_path %>, 
+      <%= link_to I18n.tbtn('public_home'), root_path %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to I18n.tbtn('sign_in'), login_path %>
+    </p>
+  <% end %>
+</div>
+
+<hr />
+
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<h1><%= tview('login') %></h1>
+
+<%= link_to I18n.tbtn('home'), root_path %>
+
+<%= form_for @user_session, :url => {:action => "create"} do |f| %>
+  <%= render 'shared/errors', :target => @user_session %>
+  
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+  </div>
+  <div>
+    <%= f.submit I18n.tbtn('login') %>
+  </div>
+<% end %>

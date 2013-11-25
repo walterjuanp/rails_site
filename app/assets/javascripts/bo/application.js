@@ -15,3 +15,4 @@
 // Change "require_tree ." for "require_directory ." for discard the bo
 // If you add more dire you need add new lines for "require_directory exemple_dir_name"
 //= require_directory .
+//= require bootstrap

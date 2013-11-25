@@ -7,6 +7,7 @@ en:
   # buttons:
   # messages:
   # errors:
+  app_name: Site
   locales:
     en: English
     es: Spanish

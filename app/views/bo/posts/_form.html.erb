@@ -1,25 +1,52 @@
 <%# PARAMS: post
 %>
-<%= form_for [:bo, post] do |f| %>
-  <%= render 'bo/shared/errors', :target => post %>
-  
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+
+<%= render 'bo/shared/errors', :target => post %>
+
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for [:bo, post], :html => {:class => 'form-horizontal'} do |f| %>
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <%= f.label :title, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :title, :class => 'form-control', :autofocus => true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :status, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.select :status, Post.statuses_for_select, {}, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :published_at, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.datetime_select :published_at, {}, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :body_md, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.text_area :body_md, :class => 'form-control' %>
+        </div>
+      </div>
+      
+      <hr />
+
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+          <%= f.submit :class => 'btn btn-primary' %>
+        </div>
+        <div class="col-md-5 align-right">
+          <% if post.new_record? %>
+            <%= link_to I18n.tbtn('cancel'), bo_posts_path, :class => 'btn btn-default' %>
+          <% else %>
+            <%= link_to I18n.tbtn('cancel'), bo_post_path(post), :class => 'btn btn-default' %>
+          <% end %>
+        </div>
+      </div>
+    </form>
+    <% end %>
   </div>
-  <div>
-    <%= f.label :status %>
-    <%= f.select :status, Post.statuses_for_select %>
-  </div>
-  <div>
-    <%= f.label :published_at %>
-    <%= f.datetime_select :published_at %>
-  </div>
-  <div>
-    <%= f.label :body_md %>
-    <%= f.text_area :body_md %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

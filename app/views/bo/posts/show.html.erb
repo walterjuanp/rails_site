@@ -1,4 +1,32 @@
 <% content_for_header I18n.tmodel(Post), tview('post') %>
 
-<%= link_to I18n.tbtn('list_of_posts'), bo_posts_path %>
-<p>title: <%= @post.title %></p>
+<div class="row">
+  <div class="col-md-7">
+    <%= link_to I18n.tbtn('list_of_posts'), bo_posts_path, :class => 'btn btn-default' %>
+  </div>
+  <div class="col-md-5 align-right">
+    <div class="btn-group">
+      <%= link_to edit_bo_post_path(@post), :class => 'btn btn-default' do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+      <%= link_to bo_post_path(@post), :class => 'btn btn-default', :confirm => I18n.tmsg('are_you_sure'), :method => :delete do %>
+        <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt><%= I18n.tattr(Post, :status) %></dt>
+      <dd><%= Post.human_enum_name :statuses, @post.status %></dd>
+      <dt><%= I18n.tattr(Post, :published_at) %></dt>
+      <dd><%= @post.published_at %></dd>
+      <dt><%= I18n.tattr(Post, :title) %></dt>
+      <dd><%= @post.title %></dd>
+      <dt><%= I18n.tattr(Post, :body_md) %></dt>
+      <dd><%= @post.body_md %></dd>
+    </dl>
+  </div>
+</div>

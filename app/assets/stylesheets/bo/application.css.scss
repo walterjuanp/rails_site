@@ -17,5 +17,11 @@
 @import "bootstrap";
 
 body {
-  padding-top: 70px;
+  padding-top: 50px;
+}
+
+#header{
+  min-height: 120px;
+  background-image: url('/assets/patterns/escheresque_ste.png');
+  color: #fff;
 }

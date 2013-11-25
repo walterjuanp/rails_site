@@ -1,4 +1,6 @@
-<h1><%= tview('list_of_posts') %></h1>
+<% content_for_header I18n.tmodel(Post), tview('list_of_posts') %>
+
+
 <%= link_to I18n.tbtn('add_new'), new_bo_post_path %>
 <ul>
   <% for post in @posts %>

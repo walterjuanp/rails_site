@@ -1,3 +1,4 @@
-<h1><%= tview('edit_post') %></h1>
+<% content_for_header I18n.tmodel(Post), tview('edit_post') %>
+
 <%= link_to I18n.tbtn('list_of_posts'), bo_posts_path %>
 <%= render 'form', :post => @post %>

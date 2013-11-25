@@ -1,4 +1,13 @@
 module ApplicationHelper
+  #
+  #
+  #
+  def content_for_header title, lead=""
+    content_for :header do
+      "<h1>#{title}</h1><p class='lead'>#{lead}</p>".html_safe
+    end
+  end
+  
   ###############################################
   # I18n
   ###############################################

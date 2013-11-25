@@ -11,16 +11,16 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active">
+        <li class="<%= active_by_controllers Bo::PostsController %>">
           <%= link_to I18n.tbtn('posts'), bo_posts_path %>
         </li>
-        <li>
+        <li class="<%= active_by_controllers Bo::TagsController %>">
           <%= link_to I18n.tbtn('tags'), bo_tags_path %>
         </li>
-        <li>
+        <li class="<%= active_by_controllers Bo::CategoriesController %>">
           <%= link_to I18n.tbtn('categories'), bo_categories_path %>
         </li>
-        <li>
+        <li class="<%= active_by_controllers Bo::UsersController %>">
            <%= link_to I18n.tbtn('users'), bo_users_path %>
         </li>
       </ul>

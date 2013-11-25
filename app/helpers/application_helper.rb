@@ -8,6 +8,15 @@ module ApplicationHelper
     end
   end
   
+  #
+  #
+  #
+  def active_by_controllers *args
+    # controller.controller_name
+    # controller.action_name
+    args.include?(controller.class) ? 'active' : ''
+  end
+  
   ###############################################
   # I18n
   ###############################################

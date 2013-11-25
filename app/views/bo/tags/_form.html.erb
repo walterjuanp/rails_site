@@ -20,10 +20,10 @@
         </div>
       </div>
       <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-2">
+        <div class="col-md-offset-2 col-md-5">
           <%= f.submit :class => 'btn btn-primary' %>
         </div>
-        <div class="col-sm-2">
+        <div class="col-md-5 align-right">
           <% if tag.new_record? %>
             <%= link_to I18n.tbtn('cancel'), bo_tags_path, :class => 'btn btn-default' %>
           <% else %>

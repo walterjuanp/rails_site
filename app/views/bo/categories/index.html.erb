@@ -1,14 +1,46 @@
-<h1><%= tview('list_of_categories') %></h1>
-<%= link_to I18n.tbtn('add_new'), new_bo_category_path %>
-<ul>
-  <% for category in @categories %>
-    <li><p>
-      <%= category.name %>, 
-      <%= link_to I18n.tbtn('show'), bo_category_path(category) %>
-      <%= link_to I18n.tbtn('edit'), edit_bo_category_path(category) %>,
-      <%= link_to I18n.tbtn('destroy'), bo_category_path(category), :confirm => I18n.tmsg('are_you_sure'), :method => :delete %>
-    </p></li>
-  <% end %>
-</ul>
+<% content_for_header I18n.tmodel(Category), tview('list_of_categories') %>
 
-<%= will_paginate @categories %>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to I18n.tbtn('add_new'), new_bo_category_path, :class => 'btn btn-default' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-7">
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th><%= I18n.tattr(Category, :name) %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for category in @categories %>
+          <tr>
+            <td><%= category.name %></td>
+            <td class="align-right">
+              <div class="btn-group">
+                <%= link_to bo_category_path(category), :class => 'btn btn-default' do %>
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                <% end %>
+                <%= link_to edit_bo_category_path(category), :class => 'btn btn-default' do %>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                <% end %>
+                <%= link_to bo_category_path(category), :class => 'btn btn-default', :confirm => I18n.tmsg('are_you_sure'), :method => :delete do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= will_paginate @categories %>
+  </div>
+</div>

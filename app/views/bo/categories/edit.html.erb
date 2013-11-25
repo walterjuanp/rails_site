@@ -1,3 +1,4 @@
-<h1><%= tview('edit_category') %></h1>
-<%= link_to I18n.tbtn('list_of_categories'), bo_categories_path %>
-<%= render 'form', :category => @category %>
+<% content_for_header I18n.tmodel(Category), tview('edit_category') %>
+
+<%= render 'form', :category => @category %><br />
+

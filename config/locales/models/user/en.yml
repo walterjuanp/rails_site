@@ -7,6 +7,7 @@ en:
       user:
         email: Email
         first_name: First name
+        full_name: Full name
         last_name: Last name
         bio: Biography
         password: Password

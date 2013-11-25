@@ -1,33 +1,68 @@
 <%# PARAMS: user
 %>
-<%= form_for [:bo, user] do |f| %>
-  <%= render 'bo/shared/errors', :target => user %>
-  
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+
+<%= render 'bo/shared/errors', :target => user %>
+
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for [:bo, user], :html => {:class => 'form-horizontal'} do |f| %>
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <%= f.label :email, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :email, :class => 'form-control', :autofocus => true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :first_name, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :first_name, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :last_name, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :last_name, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :bio, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.text_area :bio, :class => 'form-control' %>
+        </div>
+      </div>
+      
+      <hr />
+      
+      <div class="form-group">
+        <p class="help-block"><%= tview('leave_blank_to_not_update') %></p>
+        <%= f.label :password, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.password_field :password, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation, :class => 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.password_field :password_confirmation, :class => 'form-control' %>
+        </div>
+      </div>
+      
+      <hr />
+      
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+          <%= f.submit :class => 'btn btn-primary' %>
+        </div>
+        <div class="col-md-5 align-right">
+          <% if user.new_record? %>
+            <%= link_to I18n.tbtn('cancel'), bo_users_path, :class => 'btn btn-default' %>
+          <% else %>
+            <%= link_to I18n.tbtn('cancel'), bo_user_path(user), :class => 'btn btn-default' %>
+          <% end %>
+        </div>
+      </div>
+    </form>
+    <% end %>
   </div>
-  <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-  <div>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-  <div>
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,3 +1,3 @@
-<h1><%= tview('edit_tag') %></h1>
-<%= link_to I18n.tbtn('list_of_tags'), bo_tags_path %>
+<% content_for_header I18n.tmodel(Tag), tview('edit_tag') %>
+
 <%= render 'form', :tag => @tag %>

@@ -1,15 +1,11 @@
 <%# PARAMS: category
 %>
 <%= form_for [:bo, category] do |f| %>
-  <%= render 'shared/errors', :target => category %>
+  <%= render 'bo/shared/errors', :target => category %>
   
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :slug %>
-    <%= f.text_field :slug %>
   </div>
   <div>
     <%= f.label :description %>

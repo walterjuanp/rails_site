@@ -1,7 +1,7 @@
 <%# PARAMS: user
 %>
 <%= form_for [:bo, user] do |f| %>
-  <%= render 'shared/errors', :target => user %>
+  <%= render 'bo/shared/errors', :target => user %>
   
   <div>
     <%= f.label :email %>

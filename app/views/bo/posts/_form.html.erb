@@ -1,7 +1,7 @@
 <%# PARAMS: post
 %>
 <%= form_for [:bo, post] do |f| %>
-  <%= render 'shared/errors', :target => post %>
+  <%= render 'bo/shared/errors', :target => post %>
   
   <div>
     <%= f.label :title %>

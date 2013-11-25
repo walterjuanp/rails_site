@@ -1,8 +1,5 @@
-require 'slug_validator'
-
 class Category < ActiveRecord::Base
-  attr_accessible :description, :name, :slug
+  attr_accessible :description, :name
   
-  validates :name, :slug, :presence => true
-  validates :slug, :slug => true
+  validates :name, :presence => true
 end

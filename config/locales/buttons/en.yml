@@ -7,6 +7,7 @@ en:
     public_home: Public home
     home: Home
     login: Login
+    cancel: Cancel
     show: Show
     edit: Edit
     destroy: Destroy

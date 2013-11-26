@@ -4,33 +4,92 @@
 <%= render 'bo/shared/errors', :target => post %>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <%= form_for [:bo, post], :html => {:class => 'form-horizontal'} do |f| %>
     <form class="form-horizontal" role="form">
       <div class="form-group">
         <%= f.label :title, :class => 'col-sm-2 control-label' %>
-        <div class="col-sm-10">
+        <div class="col-sm-5">
           <%= f.text_field :title, :class => 'form-control', :autofocus => true %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :status, :class => 'col-sm-2 control-label' %>
-        <div class="col-sm-10">
+        <div class="col-sm-2">
           <%= f.select :status, Post.statuses_for_select, {}, :class => 'form-control' %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :published_at, :class => 'col-sm-2 control-label' %>
-        <div class="col-sm-10">
+        <div class="col-sm-8">
           <%= f.datetime_select :published_at, {}, :class => '' %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :body_md, :class => 'col-sm-2 control-label' %>
-        <div class="col-sm-10">
-          <%= f.text_area :body_md, :class => 'form-control' %>
+        <div class="col-sm-5">
+          <ul class="nav nav-pills">
+            <li><a href="#post-code" data-toggle="tab">Code</a></li>
+            <li><a href="#post-preview" data-toggle="tab">Preview</a></li>
+          </ul>
         </div>
       </div>
+      
+      <div class="tab-content">
+      <div class="tab-pane" id="post-code">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.text_area :body_md, :class => 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="post-preview">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <div class="post-preview">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+<script>
+$(document).ready(function(){
+  //--------
+  // don't use 'class="active"' for use callbacks on the first show
+  //--------
+  
+  // --- the callbacks
+  $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+    console.log(new Date, "-> tab SHOW\n\tactivated tab:", e.target, "\n\tprevious tab:", e.relatedTarget)
+    //e.target // activated tab
+    //e.relatedTarget // previous tab
+    $('#post-preview div.post-preview').html('');
+    switch($(e.target).attr('href')){
+    case '#post-code':
+      // nothing to do
+      break;
+    case '#post-preview':
+      var str = $('#post-code textarea').val();
+      $.ajax({
+        url: '/bo/ajax/kramdown_to_html',
+        data: {'str' : str },
+        success: function(data, textStatus, jqXHR){
+          $('#post-preview div.post-preview').html(data);
+        }
+      });
+      break;
+    default:
+      console.log('Invalid href for show tab');
+    }
+  });
+  
+  // --- first show
+  $('a[href="#post-code"]').tab('show');
+});
+</script>
+      
       
       <hr />
 

@@ -11,6 +11,9 @@ Site::Application.routes.draw do
     resources :tags
     resources :categories
     resources :posts
+    resources :ajax, :only => [] do
+      get 'kramdown_to_html', :on  => :collection
+    end
   end
   
   mathjax 'mathjax'

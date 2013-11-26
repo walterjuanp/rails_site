@@ -16,3 +16,4 @@
 // If you add more dire you need add new lines for "require_directory exemple_dir_name"
 //= require_directory .
 //= require bootstrap
+//= require ../prism/prism

@@ -12,6 +12,8 @@ Site::Application.routes.draw do
     resources :categories
     resources :posts
   end
+  
+  mathjax 'mathjax'
 
   
   # The priority is based upon order of creation:

@@ -28,8 +28,15 @@ gem "simple_enum", "~> 1.6.7"
 # syntax definition and supporting several common extensions.
 gem "kramdown", "~> 1.2.0"
 
+# This gem maintains MathJax at a system-wide directory.
+# MathJax is an open source JavaScript display engine for mathematics that 
+# works in all browsers. Used for work with kramdown
+gem "mathjax-rails", "~> 1.0.3"
+
 # Twitter's Bootstrap, converted to Sass and ready to drop into Rails or Compass
 gem "bootstrap-sass", "~> 3.0.2.1"
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.

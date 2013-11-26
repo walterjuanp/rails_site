@@ -6,4 +6,11 @@ class Post < ActiveRecord::Base
   
   validates :title, :body_md, :status, :presence => true
   validates :status, :as_enum => true
+  
+  before_validation :parse_body_md_to_html
+  
+  private
+  def parse_body_md_to_html
+    self.body_html = Kramdown::Document.new(self.body_md, :input => 'kramdown').to_html
+  end
 end

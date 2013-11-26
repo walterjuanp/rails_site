@@ -55,6 +55,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mathjax-rails (1.0.3)
+      railties (>= 3.0)
     mime-types (1.25)
     multi_json (1.8.2)
     polyglot (0.3.3)
@@ -116,6 +118,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   kramdown (~> 1.2.0)
+  mathjax-rails (~> 1.0.3)
   rails (= 3.2.15)
   sass-rails (~> 3.2.3)
   simple_enum (~> 1.6.7)

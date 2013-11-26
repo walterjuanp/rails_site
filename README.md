@@ -1,4 +1,4 @@
-Work in progress Rails project
+#### Work in progress Rails project
 
 Rails version 3.2.15
 

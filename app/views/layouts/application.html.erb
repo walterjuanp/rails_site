@@ -8,9 +8,7 @@
 </head>
 <body>
 
-<% if notice %>
-  <p><%= tview('notice') %>: <%= notice %></p>
-<% end %>
+<%= render 'shared/flash_messages' %>
 
 <%= render 'shared/locale_links' %>
 

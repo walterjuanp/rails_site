@@ -66,10 +66,12 @@ $(document).ready(function(){
     if( $(e.target).attr('href') == '#post-preview' ){
       var str = $('#post-code textarea').val();
       $.ajax({
+        type: "POST",
         url: '/bo/ajax/kramdown_to_html',
         data: {'str' : str },
         success: function(data, textStatus, jqXHR){
           $('#post-preview div.post-preview').html(data);
+          MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
           Prism.highlightAll();
         }
       });

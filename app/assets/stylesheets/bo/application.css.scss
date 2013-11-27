@@ -41,6 +41,25 @@ td.btn-group-for-3-btns{
   width: 130px;
 }
 
+/* fixed action buttons */
+.action-buttons{
+  position: absolute;
+  width: inherit;
+  height: 35px;
+  max-height: 35px;
+  min-height: 35px;
+}
+.fixed-action-buttons{
+  position: fixed;
+  top: 60px;
+  z-index: 1030;
+}
+.fake-action-buttons{
+  display: block;
+  height: 35px;
+  max-height: 35px;
+  min-height: 35px;
+}
 
 /* Base styles (regardless of theme) */
 .bs-callout {

@@ -18,3 +18,25 @@
 //= require bootstrap
 //= require ../prism
 //= require ../autogrow
+
+$(document).ready(function(){
+  /*
+   * Fixed Action Buttons
+   */
+  if( $('div.action-buttons').length == 1 ){
+    $('div.action-buttons').after('<div class="fake-action-buttons"></div>');
+  
+    $(window).scroll(function(event){
+      var bodyOffset = $('body').scrollTop() + 70; // the 70 is for header
+      var btnOffset = $('div.action-buttons').offset().top;
+      var btnFakeOffset = $('div.fake-action-buttons').offset().top;
+      
+      if( btnFakeOffset >= btnOffset && btnFakeOffset >= bodyOffset ){
+        $('div.action-buttons').removeClass('fixed-action-buttons');
+      }else{
+         $('div.action-buttons').addClass('fixed-action-buttons');
+      }
+      
+    });
+  }
+});

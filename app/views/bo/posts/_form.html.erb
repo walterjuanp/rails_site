@@ -3,107 +3,107 @@
 
 <%= render 'bo/shared/errors', :target => post %>
 
-<div class="row">
-  <div class="col-md-12">
-    <%= form_for [:bo, post], :html => {:class => 'form-horizontal'} do |f| %>
-    <form class="form-horizontal" role="form">
-      <div class="form-group">
-        <%= f.label :title, :class => 'col-sm-2 control-label' %>
-        <div class="col-sm-5">
-          <%= f.text_field :title, :class => 'form-control', :autofocus => true %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :status, :class => 'col-sm-2 control-label' %>
-        <div class="col-sm-2">
-          <%= f.select :status, Post.statuses_for_select, {}, :class => 'form-control' %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :published_at, :class => 'col-sm-2 control-label' %>
-        <div class="col-sm-8">
-          <%= f.datetime_select :published_at, {}, :class => '' %>
-        </div>
-      </div>
-      
-      <div id="post-fullscreen">
+<%= form_for [:bo, post], :html => {:class => 'form-horizontal'} do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form-horizontal" role="form">
         <div class="form-group">
-          <%= f.label :body_kd, :class => 'col-sm-2 control-label' %>
+          <%= f.label :title, :class => 'col-sm-2 control-label' %>
           <div class="col-sm-5">
-            <ul class="nav nav-pills">
-              <li><a href="#post-code" data-toggle="tab">Code</a></li>
-              <li><a href="#post-preview" data-toggle="tab">Preview</a></li>
-            </ul>
+            <%= f.text_field :title, :class => 'form-control', :autofocus => true %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :status, :class => 'col-sm-2 control-label' %>
+          <div class="col-sm-2">
+            <%= f.select :status, Post.statuses_for_select, {}, :class => 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :published_at, :class => 'col-sm-2 control-label' %>
+          <div class="col-sm-8">
+            <%= f.datetime_select :published_at, {}, :class => '' %>
           </div>
         </div>
         
-        <div class="tab-content">
-          <div class="tab-pane" id="post-code">
-            <div class="form-group">
-              <div class="col-sm-12">
-                <%= f.text_area :body_kd, :class => 'form-control' %>
-              </div>
+        <div id="post-fullscreen">
+          <div class="form-group">
+            <%= f.label :body_kd, :class => 'col-sm-2 control-label' %>
+            <div class="col-sm-5">
+              <ul class="nav nav-pills">
+                <li><a href="#post-code" data-toggle="tab">Code</a></li>
+                <li><a href="#post-preview" data-toggle="tab">Preview</a></li>
+              </ul>
             </div>
           </div>
-          <div class="tab-pane" id="post-preview">
-            <div class="form-group">
-              <div class="col-sm-12">
-                <div class="post-preview"></div>
+          
+          <div class="tab-content">
+            <div class="tab-pane" id="post-code">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <%= f.text_area :body_kd, :class => 'form-control' %>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="post-preview">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <div class="post-preview"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      
-<script>
-$(document).ready(function(){
-  //--------
-  // don't use 'class="active"' for use callbacks on the first show
-  //--------
-  
-  // --- the callbacks
-  $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-    //e.target // activated tab
-    //e.relatedTarget // previous tab
-    $('#post-preview div.post-preview').html('');
-    if( $(e.target).attr('href') == '#post-preview' ){
-      var str = $('#post-code textarea').val();
-      $.ajax({
-        type: "POST",
-        url: '/bo/ajax/kramdown_to_html',
-        data: {'str' : str },
-        success: function(data, textStatus, jqXHR){
-          $('#post-preview div.post-preview').html(data);
-          MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-          Prism.highlightAll();
-        }
-      });
-    }
+        
+  <script>
+  $(document).ready(function(){
+    //--------
+    // don't use 'class="active"' for use callbacks on the first show
+    //--------
+    
+    // --- the callbacks
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+      //e.target // activated tab
+      //e.relatedTarget // previous tab
+      $('#post-preview div.post-preview').html('');
+      if( $(e.target).attr('href') == '#post-preview' ){
+        var str = $('#post-code textarea').val();
+        $.ajax({
+          type: "POST",
+          url: '/bo/ajax/kramdown_to_html',
+          data: {'str' : str },
+          success: function(data, textStatus, jqXHR){
+            $('#post-preview div.post-preview').html(data);
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            Prism.highlightAll();
+          }
+        });
+      }
+    });
+    
+    // --- first show
+    $('a[href="#post-code"]').tab('show');
+    
+    $('#post_body_kd').autogrow({onInitialize: true});
   });
+  </script>
+        
+        
+        <hr />
   
-  // --- first show
-  $('a[href="#post-code"]').tab('show');
-  
-  $('#post_body_kd').autogrow({onInitialize: true});
-});
-</script>
-      
-      
-      <hr />
-
-      <div class="form-group">
-        <div class="col-md-offset-2 col-md-5">
-          <%= f.submit :class => 'btn btn-primary' %>
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-5">
+            <%= f.submit :class => 'btn btn-primary' %>
+          </div>
+          <div class="col-md-5 align-right">
+            <% if post.new_record? %>
+              <%= link_to I18n.tbtn('cancel'), bo_posts_path, :class => 'btn btn-default' %>
+            <% else %>
+              <%= link_to I18n.tbtn('cancel'), bo_post_path(post), :class => 'btn btn-default' %>
+            <% end %>
+          </div>
         </div>
-        <div class="col-md-5 align-right">
-          <% if post.new_record? %>
-            <%= link_to I18n.tbtn('cancel'), bo_posts_path, :class => 'btn btn-default' %>
-          <% else %>
-            <%= link_to I18n.tbtn('cancel'), bo_post_path(post), :class => 'btn btn-default' %>
-          <% end %>
-        </div>
-      </div>
-    </form>
-    <% end %>
+      </form>
+    </div>
   </div>
-</div>
+<% end %>

@@ -25,32 +25,35 @@
           <%= f.datetime_select :published_at, {}, :class => '' %>
         </div>
       </div>
-      <div class="form-group">
-        <%= f.label :body_kd, :class => 'col-sm-2 control-label' %>
-        <div class="col-sm-5">
-          <ul class="nav nav-pills">
-            <li><a href="#post-code" data-toggle="tab">Code</a></li>
-            <li><a href="#post-preview" data-toggle="tab">Preview</a></li>
-          </ul>
-        </div>
-      </div>
       
-      <div class="tab-content">
-      <div class="tab-pane" id="post-code">
+      <div id="post-fullscreen">
         <div class="form-group">
-          <div class="col-sm-12">
-            <%= f.text_area :body_kd, :class => 'form-control' %>
+          <%= f.label :body_kd, :class => 'col-sm-2 control-label' %>
+          <div class="col-sm-5">
+            <ul class="nav nav-pills">
+              <li><a href="#post-code" data-toggle="tab">Code</a></li>
+              <li><a href="#post-preview" data-toggle="tab">Preview</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="tab-content">
+          <div class="tab-pane" id="post-code">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <%= f.text_area :body_kd, :class => 'form-control' %>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="post-preview">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="post-preview"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="tab-pane" id="post-preview">
-        <div class="form-group">
-          <div class="col-sm-12">
-            <div class="post-preview"></div>
-          </div>
-        </div>
-      </div>
-    </div>
       
 <script>
 $(document).ready(function(){
@@ -80,6 +83,8 @@ $(document).ready(function(){
   
   // --- first show
   $('a[href="#post-code"]').tab('show');
+  
+  $('#post_body_kd').autogrow({onInitialize: true});
 });
 </script>
       

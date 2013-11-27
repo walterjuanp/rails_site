@@ -6,7 +6,7 @@ en:
     attributes:
       post:
         title: Title
-        body_md: Body in Markdown
+        body_kd: Body in kramdown
         body_html: Body in HTM
         status: Status
         published_at: Publication date

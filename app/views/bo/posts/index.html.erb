@@ -19,7 +19,7 @@
       <tbody>
         <% for post in @posts %>
           <tr>
-            <td><%= Post.human_enum_name :statuses, post.status %></td>
+            <td><%= label_by_post_status post.status %></td>
             <td><%= post.title %></td>
             <td class="align-right btn-group-for-3-btns">
               <div class="btn-group">

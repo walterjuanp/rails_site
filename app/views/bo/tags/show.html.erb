@@ -1,6 +1,6 @@
 <% content_for_header I18n.tmodel(Tag), tview('tag') %>
 
-<div class="row">
+<div class="row action-buttons">
   <div class="col-md-7">
     <%= link_to I18n.tbtn('list_of_tags'), bo_tags_path, :class => 'btn btn-default' %>
   </div>
@@ -21,6 +21,8 @@
     <dl class="dl-horizontal">
       <dt><%= I18n.tattr(Tag, :name) %></dt>
       <dd><%= @tag.name %></dd>
+      <dt><%= I18n.tattr(Tag, :slug) %></dt>
+      <dd><%= @tag.slug %></dd>
       <dt><%= I18n.tattr(Tag, :description) %></dt>
       <dd><%= @tag.description %></dd>
     </dl>

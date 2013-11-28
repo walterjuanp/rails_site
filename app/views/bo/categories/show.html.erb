@@ -1,6 +1,6 @@
 <% content_for_header I18n.tmodel(Category), tview('category') %>
 
-<div class="row">
+<div class="row action-buttons">
   <div class="col-md-7">
     <%= link_to I18n.tbtn('list_of_categories'), bo_categories_path, :class => 'btn btn-default' %>
   </div>
@@ -21,6 +21,8 @@
     <dl class="dl-horizontal">
       <dt><%= I18n.tattr(Category, :name) %></dt>
       <dd><%= @category.name %></dd>
+      <dt><%= I18n.tattr(Category, :slug) %></dt>
+      <dd><%= @category.slug %></dd>
       <dt><%= I18n.tattr(Category, :description) %></dt>
       <dd><%= @category.description %></dd>
     </dl>

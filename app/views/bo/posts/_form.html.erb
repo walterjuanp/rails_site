@@ -20,6 +20,18 @@
           </div>
         </div>
         <div class="form-group">
+          <%= f.label :category_id, :class => 'col-sm-2 control-label' %>
+          <div class="col-sm-5">
+            <%= f.collection_select :category_id, Category.all, :id, :name, {:include_blank => true}, :class => 'form-control selectize' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :tag_names, :class => 'col-sm-2 control-label' %>
+          <div class="col-sm-5">
+            <%= f.text_field :tag_names, :class => 'form-control selectize' %>
+          </div>
+        </div>
+        <div class="form-group">
           <%= f.label :published_at, :class => 'col-sm-2 control-label' %>
           <div class="col-sm-8">
             <%= f.datetime_select :published_at, {}, :class => '' %>
@@ -55,38 +67,55 @@
           </div>
         </div>
         
-  <script>
-  $(document).ready(function(){
-    //--------
-    // don't use 'class="active"' for use callbacks on the first show
-    //--------
-    
-    // --- the callbacks
-    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-      //e.target // activated tab
-      //e.relatedTarget // previous tab
-      $('#post-preview div.post-preview').html('');
-      if( $(e.target).attr('href') == '#post-preview' ){
-        var str = $('#post-code textarea').val();
-        $.ajax({
-          type: "POST",
-          url: '/bo/ajax/kramdown_to_html',
-          data: {'str' : str },
-          success: function(data, textStatus, jqXHR){
-            $('#post-preview div.post-preview').html(data);
-            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-            Prism.highlightAll();
-          }
-        });
-      }
-    });
-    
-    // --- first show
-    $('a[href="#post-code"]').tab('show');
-    
-    $('#post_body_kd').autogrow({onInitialize: true});
+<script>
+$(document).ready(function(){
+  //--------
+  // don't use 'class="active"' for use callbacks on the first show
+  //--------
+  
+  // --- the callbacks
+  $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+    //e.target // activated tab
+    //e.relatedTarget // previous tab
+    $('#post-preview div.post-preview').html('');
+    if( $(e.target).attr('href') == '#post-preview' ){
+      var str = $('#post-code textarea').val();
+      $.ajax({
+        type: "POST",
+        url: '/bo/ajax/kramdown_to_html',
+        data: {'str' : str },
+        success: function(data, textStatus, jqXHR){
+          $('#post-preview div.post-preview').html(data);
+          MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+          Prism.highlightAll();
+        }
+      });
+    }
   });
-  </script>
+  
+  // --- first show
+  $('a[href="#post-code"]').tab('show');
+  
+  //--------
+  // autogrow
+  //--------
+  $('#post_body_kd').autogrow({onInitialize: true});
+  
+  //--------
+  // selectize
+  //--------
+  $('#post_category_id').selectize({
+    create: true,
+    sortField: 'text'
+  });
+  $('#post_tag_names').selectize({
+    delimiter: ',',
+    persist: false,
+    create: true,
+    options: <%= post.tag_selectize_options(Tag.to_selectize_options).to_json.html_safe %>
+  });
+});
+</script>
         
         
         <hr />

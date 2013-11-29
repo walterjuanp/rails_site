@@ -13,6 +13,8 @@
  * If you add more dire you need add new lines for "require_directory exemple_dir_name"
  *= require_directory .
  *= require ../prism
+ *= require selectize
+ *= require selectize.bootstrap3
  */
 
 $navbar-inverse-bg: #343434;

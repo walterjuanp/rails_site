@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.tag-list span.tag{
+  padding: 2px 4px;
+  margin: 0 3px 3px 0;
+  color: #333333;
+  background: #efefef;
+  border: 0 solid rgba(0, 0, 0, 0);
+}
 
 div.post-preview{
   padding: 6px 12px;
@@ -14,3 +21,5 @@ div.post-preview{
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
+
+

@@ -18,6 +18,7 @@
 //= require bootstrap
 //= require ../prism
 //= require ../autogrow
+//= require selectize
 
 $(document).ready(function(){
   /*

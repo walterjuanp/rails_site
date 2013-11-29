@@ -10,3 +10,5 @@ en:
         body_html: Body in HTM
         status: Status
         published_at: Publication date
+        category: Category
+        tags: Tags

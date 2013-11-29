@@ -23,6 +23,10 @@
       <dd><%= label_by_post_status @post.status %></dd>
       <dt><%= I18n.tattr(Post, :published_at) %></dt>
       <dd><%= @post.published_at %></dd>
+      <dt><%= I18n.tattr(Post, :category) %></dt>
+      <dd><%= @post.category.name unless @post.category.blank? %></dd>
+      <dt><%= I18n.tattr(Post, :tags) %></dt>
+      <dd><%= tag_list @post.tags %></dd>
       <dt><%= I18n.tattr(Post, :title) %></dt>
       <dd><%= @post.title %></dd>
       <dt><%= I18n.tattr(Post, :body_html) %></dt>

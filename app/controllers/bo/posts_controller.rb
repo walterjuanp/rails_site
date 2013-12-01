@@ -1,6 +1,6 @@
 class Bo::PostsController < Bo::BaseController
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => ELEMS_PER_PAGE)
+    @posts = Post.paginate(:page => params[:page], :per_page => ELEMS_PER_PAGE).order('published_at DESC')
   end
   
   def show

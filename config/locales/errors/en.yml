@@ -4,3 +4,4 @@ en:
     logged_in_to_access: You must be logged in to access this page
     logged_out_to_access: You must be logged out to access this page
     there_are_errors: "There are errors"
+    cant_blank_if_published: can't be blank if published

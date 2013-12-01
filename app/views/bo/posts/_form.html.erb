@@ -104,11 +104,16 @@ $(document).ready(function(){
   //--------
   // selectize
   //--------
+  $('#post_status').selectize({
+    create: true,
+    sortField: 'text'
+  });
   $('#post_category_id').selectize({
     create: true,
     sortField: 'text'
   });
   $('#post_tag_names').selectize({
+    plugins: ['remove_button'],
     delimiter: ',',
     persist: false,
     create: true,

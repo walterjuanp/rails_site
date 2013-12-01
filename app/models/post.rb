@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   attr_accessible :body_html, :body_kd, :published_at, :status, :title, :category_id, :tag_names
   attr_accessor :tag_names
   
-  validates :title, :body_kd, :status, :presence => true
+  validates :title, :body_kd, :status, :published_at, :presence => true
   validates :status, :as_enum => true
   
   before_validation :parse_body_kd_to_html
@@ -40,6 +40,5 @@ class Post < ActiveRecord::Base
       self.tags << ( Tag.find_by_name(tag_name) || Tag.new(:name => tag_name) )
     end
   end  
-  
   
 end

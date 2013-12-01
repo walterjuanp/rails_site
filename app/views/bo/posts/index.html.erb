@@ -31,7 +31,7 @@
                 <%= link_to edit_bo_post_path(post), :class => 'btn btn-default' do %>
                   <span class="glyphicon glyphicon-pencil"></span>
                 <% end %>
-                <%= link_to bo_post_path(post), :class => 'btn btn-default', :confirm => I18n.tmsg('are_you_sure'), :method => :delete do %>
+                <%= link_to bo_post_path(post), :class => 'btn btn-danger', :confirm => I18n.tmsg('are_you_sure'), :method => :delete do %>
                   <span class="glyphicon glyphicon-trash"></span>
                 <% end %>
               </div>

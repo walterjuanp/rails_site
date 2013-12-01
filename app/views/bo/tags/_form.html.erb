@@ -25,21 +25,6 @@
           <%= f.text_area :description, :class => 'form-control' %>
         </div>
       </div>
-      
-      <hr />
-      
-      <div class="form-group">
-        <div class="col-md-offset-2 col-md-5">
-          <%= f.submit :class => 'btn btn-primary' %>
-        </div>
-        <div class="col-md-5 align-right">
-          <% if tag.new_record? %>
-            <%= link_to I18n.tbtn('cancel'), bo_tags_path, :class => 'btn btn-default' %>
-          <% else %>
-            <%= link_to I18n.tbtn('cancel'), bo_tag_path(tag), :class => 'btn btn-default' %>
-          <% end %>
-        </div>
-      </div>
     </form>
     <% end %>
   </div>

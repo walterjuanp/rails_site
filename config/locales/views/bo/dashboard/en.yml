@@ -5,3 +5,4 @@ en:
       dashboard:
         dashboard: Dashboard
         number_of_publications: Number of publications
+        header_lead: A little summary of what's nearby

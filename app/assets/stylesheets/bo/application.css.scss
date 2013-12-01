@@ -22,6 +22,7 @@ $navbar-inverse-border: #1D1D1D;
 $navbar-inverse-link-active-bg: #222222;
 
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
 
 body {
   padding-top: 50px;
@@ -41,6 +42,13 @@ body {
 
 td.btn-group-for-3-btns{
   width: 130px;
+}
+
+/* Code text area */
+textarea.code{
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* fixed action buttons */

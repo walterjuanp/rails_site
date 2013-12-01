@@ -1,0 +1,29 @@
+<% content_for_header tview('dashboard') %>
+
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading"><%= tview('number_of_publications') %></div>
+    
+      <!-- Table -->
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><%= label_by_post_status :published %></td>
+            <td><%= Post.where(:status_cd => Post.status_published).count %></td>
+          </tr>
+          <tr>
+            <td><%= label_by_post_status :pending_review %></td>
+            <td><%= Post.where(:status_cd => Post.status_pending_review).count %></td>
+          </tr>
+          <tr>
+            <td><%= label_by_post_status :draft %></td>
+            <td><%= Post.where(:status_cd => Post.status_draft).count %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

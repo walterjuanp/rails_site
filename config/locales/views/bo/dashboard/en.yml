@@ -1,0 +1,7 @@
+
+en:
+  views:
+    bo:
+      dashboard:
+        dashboard: Dashboard
+        number_of_publications: Number of publications

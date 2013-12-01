@@ -11,6 +11,9 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        <li class="<%= active_by_controllers Bo::DashboardController %>">
+          <%= link_to I18n.tbtn('dashboard'), bo_dashboard_path %>
+        </li>
         <li class="<%= active_by_controllers Bo::PostsController %>">
           <%= link_to I18n.tbtn('posts'), bo_posts_path %>
         </li>

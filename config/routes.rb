@@ -7,6 +7,7 @@ Site::Application.routes.draw do
   match 'logout'  => "user_sessions#destroy", :as => :logout
   
   namespace :bo do
+    match 'dashboard' => "dashboard#index"
     resources :users
     resources :tags
     resources :categories

@@ -1,8 +1,8 @@
-<% content_for_header I18n.tmodel(Post), tview('edit_post') %>
+<% content_for_header I18n.tmodel(Image), tview('edit_image') %>
 
 <div class="row action-buttons">
   <div class="col-md-7">
-    <%= link_to I18n.tbtn('cancel'), bo_post_path(@post), :class => 'btn btn-default' %>
+    <%= link_to I18n.tbtn('cancel'), bo_image_path(@image), :class => 'btn btn-default' %>
   </div>
   <div class="col-md-5 align-right">
     <div class="btn-group">
@@ -13,4 +13,5 @@
   </div>
 </div>
 
-<%= render 'form', :image => @post %>
+<%= render 'form', :image => @image %><br />
+

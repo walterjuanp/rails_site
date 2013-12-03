@@ -15,6 +15,7 @@
  *= require ../prism
  *= require selectize
  *= require selectize.bootstrap3
+ *= require ../magnific-popup/main
  */
 
 $navbar-inverse-bg: #343434;
@@ -39,9 +40,15 @@ body {
 .align-right{
   text-align: right;
 }
+.align-left{
+  text-align: left;
+}
 
 td.btn-group-for-3-btns{
-  width: 130px;
+  width: 140px;
+}
+td.btn-group-for-4-btns {
+  width: 180px;
 }
 
 /* Code text area */

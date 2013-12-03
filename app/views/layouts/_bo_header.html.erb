@@ -17,6 +17,9 @@
         <li class="<%= active_by_controllers Bo::PostsController %>">
           <%= link_to I18n.tbtn('posts'), bo_posts_path %>
         </li>
+        <li class="<%= active_by_controllers Bo::ImagesController %>">
+          <%= link_to I18n.tbtn('images'), bo_images_path %>
+        </li>
         <li class="<%= active_by_controllers Bo::TagsController %>">
           <%= link_to I18n.tbtn('tags'), bo_tags_path %>
         </li>

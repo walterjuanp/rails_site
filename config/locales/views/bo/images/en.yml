@@ -1,0 +1,9 @@
+
+en:
+  views:
+    bo:
+      images:
+        list_of_images: List of images
+        images: Images
+        new_image: New image
+        edit_image: Edit image

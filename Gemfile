@@ -39,6 +39,9 @@ gem "bootstrap-sass", "~> 3.0.2.1"
 # A small gem for putting selectize.js into the Rails asset pipeline
 gem "selectize-rails", "~> 0.8.5"
 
+# Easy upload management for ActiveRecord
+gem "paperclip", "~> 3.5.2"
+
 
 # Gems used only for assets and not required
 # in production environments by default.

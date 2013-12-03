@@ -16,8 +16,10 @@ en:
     list_of_tags: List of tags
     list_of_categories: List of categories
     list_of_posts: List of posts
+    list_of_images: List of images
     users: Users
     tags: Tags
     categories: Categories
     posts: Posts
     dashboard: Dashboard
+    images: Images

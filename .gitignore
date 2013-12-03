@@ -16,3 +16,6 @@
 
 # Ignore IDE's folders/files
 .project
+
+# Ignore public/sytem folder
+public/system/

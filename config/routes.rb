@@ -12,6 +12,7 @@ Site::Application.routes.draw do
     resources :tags
     resources :categories
     resources :posts
+    resources :images
     resources :ajax, :only => [] do
       post 'kramdown_to_html', :on  => :collection
     end

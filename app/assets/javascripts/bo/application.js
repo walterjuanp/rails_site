@@ -19,6 +19,7 @@
 //= require ../prism
 //= require ../autogrow
 //= require selectize
+//= require ../magnific-popup/magnific-popup
 
 $(document).ready(function(){
   /*

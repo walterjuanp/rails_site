@@ -1,0 +1,78 @@
+<% content_for_header I18n.tmodel(Image), tview('list_of_images') %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to I18n.tbtn('add_new'), new_bo_image_path, :class => 'btn btn-default' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th><%= I18n.tattr(Image, :image) %></th>
+          <th><%= I18n.tattr(Image, :name) %></th>
+          <th><%= I18n.tattr(Image, :alt) %></th>
+          <th></th>
+        </tr>
+      </thead>
+<script>
+$(document).ready(function(){
+  $('.magnific-popup').magnificPopup({ 
+    type: 'image',
+    titleSrc: 'title'
+  });
+
+  $('.magnific-popup-zoom').magnificPopup({ 
+    type: 'image',
+    mainClass: 'mfp-with-zoom',
+    zoom: {
+      enabled: true
+    },
+    titleSrc: 'title'
+  });
+});
+</script>
+      <tbody>
+        <% for image in @images %>
+          <tr>
+            <td>
+              <%= link_to image.image.url, :class => 'magnific-popup-zoom', :title => image.name do %>
+                <%= image_tag image.image.url(:thumb), :class => 'img-rounded image-list-thumb' %>
+              <% end %>
+            </td>
+            <td><%= image.name %></td>
+            <td><%= image.alt %></td>
+            <td class="align-right btn-group-for-4-btns">
+              <div class="btn-group">
+                <div class="btn-group">
+                  <%= button_tag :class => 'btn btn-default dropdown-toggle', 'data-toggle' => "dropdown" do %>
+                    <span class="glyphicon glyphicon-paperclip"></span>
+                    <span class="caret"></span>
+                  <% end %>
+                  <ul class="dropdown-menu align-left" role="menu">
+                    <% Image::STYLES.each do |key, value| %>
+                      <li>
+                        <%= link_to key, 'javascript:void(0)', :onclick => "window.prompt ('#{tview('copy_to_clipboard')}', '#{path_to_image image.image.url(key)}');" %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+                <%= link_to bo_image_path(image), :class => 'btn btn-default' do %>
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                <% end %>
+                <%= link_to edit_bo_image_path(image), :class => 'btn btn-default' do %>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                <% end %>
+                <%= link_to bo_image_path(image), :class => 'btn btn-danger', :confirm => I18n.tmsg('are_you_sure'), :method => :delete do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

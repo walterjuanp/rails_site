@@ -1,0 +1,10 @@
+
+en:
+  activerecord:
+    models:
+      image: Image
+    attributes:
+      image:
+        name: Name
+        image: Image
+        alt: ALT text

@@ -46,19 +46,7 @@ $(document).ready(function(){
             <td><%= image.alt %></td>
             <td class="align-right btn-group-for-4-btns">
               <div class="btn-group">
-                <div class="btn-group">
-                  <%= button_tag :class => 'btn btn-default dropdown-toggle', 'data-toggle' => "dropdown" do %>
-                    <span class="glyphicon glyphicon-paperclip"></span>
-                    <span class="caret"></span>
-                  <% end %>
-                  <ul class="dropdown-menu align-left" role="menu">
-                    <% Image::STYLES.each do |key, value| %>
-                      <li>
-                        <%= link_to key, 'javascript:void(0)', :onclick => "window.prompt ('#{tview('copy_to_clipboard')}', '#{path_to_image image.image.url(key)}');" %>
-                      </li>
-                    <% end %>
-                  </ul>
-                </div>
+                <%= image_dropdown_styles_button image  %>
                 <%= link_to bo_image_path(image), :class => 'btn btn-default' do %>
                   <span class="glyphicon glyphicon-eye-open"></span>
                 <% end %>

@@ -6,6 +6,7 @@
   </div>
   <div class="col-md-5 align-right">
     <div class="btn-group">
+      <%= image_dropdown_styles_button @image  %>
       <%= link_to edit_bo_image_path(@image), :class => 'btn btn-default' do %>
         <span class="glyphicon glyphicon-pencil"></span>
       <% end %>

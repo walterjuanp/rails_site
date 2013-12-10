@@ -25,7 +25,11 @@
       <dt><%= I18n.tattr(Image, :alt) %></dt>
       <dd><%= @image.alt %></dd>
       <dt><%= I18n.tattr(Image, :image) %></dt>
-      <dd><%= image_tag @image.image.url(:thumb) %></dd>
+      <dd>
+        <%= link_to @image.image.url, :class => 'magnific-popup-zoom', :title => @image.name do %>
+          <%= image_tag @image.image.url(:thumb) %>
+        <% end %>
+      </dd>
     </dl>
   </div>
 </div>

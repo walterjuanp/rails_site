@@ -17,23 +17,6 @@
           <th></th>
         </tr>
       </thead>
-<script>
-$(document).ready(function(){
-  $('.magnific-popup').magnificPopup({ 
-    type: 'image',
-    titleSrc: 'title'
-  });
-
-  $('.magnific-popup-zoom').magnificPopup({ 
-    type: 'image',
-    mainClass: 'mfp-with-zoom',
-    zoom: {
-      enabled: true
-    },
-    titleSrc: 'title'
-  });
-});
-</script>
       <tbody>
         <% for image in @images %>
           <tr>

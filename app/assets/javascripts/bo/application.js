@@ -41,4 +41,21 @@ $(document).ready(function(){
       
     });
   }
+  
+  /*
+   * Magnific popup
+   */
+  $('.magnific-popup').magnificPopup({ 
+    type: 'image',
+    titleSrc: 'title'
+  });
+
+  $('.magnific-popup-zoom').magnificPopup({ 
+    type: 'image',
+    mainClass: 'mfp-with-zoom',
+    zoom: {
+      enabled: true
+    },
+    titleSrc: 'title'
+  });
 });

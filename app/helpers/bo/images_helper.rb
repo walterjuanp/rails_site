@@ -10,6 +10,7 @@ module Bo::ImagesHelper
       Image::STYLES.each do |key, value|
         concat content_tag(:li, (link_to key, 'javascript:void(0)', :onclick => "window.prompt ('#{tview('copy_to_clipboard')}', '#{path_to_image image.image.url(key)}');"))
       end
+      concat content_tag(:li, (link_to 'original', 'javascript:void(0)', :onclick => "window.prompt ('#{tview('copy_to_clipboard')}', '#{path_to_image image.image.url}');"))
     end
     
     content_tag(:div, btn+links, :class => 'btn-group')

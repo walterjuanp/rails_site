@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text        :body_html
       t.string      :status_cd
       t.datetime    :published_at
+      t.string      :slug
       t.references  :category
 
       t.timestamps

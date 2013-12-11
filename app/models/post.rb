@@ -1,14 +1,18 @@
 class Post < ActiveRecord::Base
+  extend FriendlyId
+  
   # Post.statuses get all status
   as_enum :status, [:draft, :pending_review, :published], :strings => true
+  
+  friendly_id :title, :use => :slugged
+
+  attr_accessible :body_html, :body_kd, :published_at, :status, :title, :category_id, :tag_names
+  attr_accessor :tag_names
   
   belongs_to :category
   has_and_belongs_to_many :tags, :uniq => true, :validate => true
   
-  attr_accessible :body_html, :body_kd, :published_at, :status, :title, :category_id, :tag_names
-  attr_accessor :tag_names
-  
-  validates :title, :body_kd, :status, :published_at, :presence => true
+  validates :title, :body_kd, :status, :published_at, :slug, :presence => true
   validates :status, :as_enum => true
   
   before_validation :parse_body_kd_to_html

@@ -42,6 +42,15 @@ gem "selectize-rails", "~> 0.8.5"
 # Easy upload management for ActiveRecord
 gem "paperclip", "~> 3.5.2"
 
+# FriendlyId is the "Swiss Army bulldozer" of slugging and permalink 
+# plugins for Active Record. It lets you create pretty URLs and work with 
+# human-friendly strings as if they were numeric ids.
+# Version 4 is for Rails 3.x and v5 for Rails 4.x
+# Docs: 
+#   http://norman.github.io/friendly_id/4.0/
+#   http://norman.github.io/friendly_id/4.0/file.Guide.html
+gem "friendly_id", "~> 4.0"
+
 
 # Gems used only for assets and not required
 # in production environments by default.

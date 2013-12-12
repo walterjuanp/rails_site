@@ -1,8 +1,11 @@
+
 <% if notice %>
   <div class="alert alert-success">
-    <div class="row">
-      <div class="desktop-12 tablet-8 mobile-3">
-        <p><%= notice %></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><%= notice %></p>
+        </div>
       </div>
     </div>
   </div>
@@ -10,9 +13,11 @@
 
 <% if flash[:info] %>
   <div class="alert alert-info">
-    <div class="row">
-      <div class="desktop-12 tablet-8 mobile-3">
-        <p><%= flash[:error] %></p></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><%= flash[:error] %></p></p>
+        </div>
       </div>
     </div>
   </div>
@@ -20,9 +25,11 @@
 
 <% if flash[:error] %>
   <div class="alert alert-danger">
-    <div class="row">
-      <div class="desktop-12 tablet-8 mobile-3">
-        <p><%= flash[:error] %></p></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><%= flash[:error] %></p></p>
+        </div>
       </div>
     </div>
   </div>
@@ -30,9 +37,11 @@
 
 <% if flash[:warning] %>
   <div class="alert alert-warning">
-    <div class="row">
-      <div class="desktop-12 tablet-8 mobile-3">
-        <p><%= flash[:warning] %></p></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><%= flash[:warning] %></p></p>
+        </div>
       </div>
     </div>
   </div>

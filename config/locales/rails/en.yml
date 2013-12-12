@@ -1,0 +1,7 @@
+en:
+  date:
+    formats:
+      short_2: ! '%d %b %Y'
+  time:
+    formats:
+      short_2: ! '%d %b %Y'

@@ -16,6 +16,25 @@
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
             <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
           </div>
+          
+          <div class="row extra">
+            <div class="col-md-2">
+              <p>
+                <span class="glyphicon glyphicon-calendar"></span>
+                &nbsp;
+                <%= l post.published_at, :format => :short_2 %>
+              </p>
+            </div>
+            <% if post.category%>
+              <div class="col-md-2">
+                <p>
+                  <span class="glyphicon glyphicon-folder-open"></span>
+                  &nbsp;
+                  <%= link_to post.category.name, '#'%>
+                </p>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </article>

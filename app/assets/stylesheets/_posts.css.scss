@@ -15,6 +15,18 @@
     box-shadow: 0 4px 8px #e6e6e6;
   }
   .text{
-    
+    margin-bottom: 25px;
+  }
+  .extra{
+    font-size: 12px;
+    border-top: 1px solid #e6e6e6;
+    padding-top: 10px;
+    color: $coal-ligth-color;
+    a{
+      color: $coal-ligth-color;
+      &:hover{
+        color: $coal-color;
+      }
+    }
   }
 }

@@ -7,9 +7,20 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+ * 
  *= require_self
- * Change "require_tree ." for "require_directory ." for discard the bo
- * If you add more dire you need add new lines for "require_directory exemple_dir_name"
- *= require_directory .
  */
+
+/* Custom vars and overwrite some from Bootstrap */
+@import 'vars';
+
+/* Twitter Bootstrap */
+@import 'bootstrap-custom';
+
+
+@import 'general';
+@import 'header';
+@import 'posts';
+
+
+

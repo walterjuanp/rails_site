@@ -1,0 +1,27 @@
+/* default font */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+/* titles, anchors and buttons font */
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+/* brand font */
+@import url(http://fonts.googleapis.com/css?family=Vibur);
+
+$default-font: 'Open Sans', 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+$alt-font:     'Montserrat', sans-serif;
+$brand-font:   'Vibur', cursive;
+
+$ocher-ligth-color: #f6f6f6;
+$coal-color:        #353c3e;
+$green-color:       #A0D468;
+$green-dark-color:  #8CC152;
+$orange-color:      #FC6E51;
+$orange-dark-color: #E9573F;
+
+/**
+ *   
+ * OVERWRITE FROM BOOTSTRAP
+ * 
+ */
+$body-bg:           $ocher-ligth-color;
+$text-color:        $coal-color;
+$link-color:        $orange-color;
+$link-hover-color:  $orange-dark-color;

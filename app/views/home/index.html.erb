@@ -1,1 +1,23 @@
-<h1><%= tview('home') %></h1>
+<div class="row page-header">
+  <div class="desktop-12 tablet-6 mobile-3">
+    <h1>Blog</h1>
+  </div>
+</div>
+
+<section> 
+  <% for post in @posts %>
+    <article class="post">
+      <div class="row">
+        <div class="desktop-12 tablet-6 mobile-3 post-entry">
+          <h2>
+            <%= link_to post.title, '#' %>
+          </h2>
+          <div class="text">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  <% end %>
+</section>

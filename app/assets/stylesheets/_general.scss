@@ -1,0 +1,74 @@
+/**
+ * 
+ * GENERAL TAGS  
+ * 
+ */
+body{
+  font-family: $default-font;
+}
+
+a, h1, h2, h3, h4, h5, h6{
+  font-family: $alt-font;
+}
+
+a, a:visited, a:hover{
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+/**
+ * 
+ * GENERAL PURPOUSE  
+ * 
+ */
+.align-right{
+  text-align: right;
+}
+.align-left{
+  text-align: left;
+}
+
+/* alerts */
+.alert{
+  display: none;
+  cursor: pointer;
+  .row{
+    padding: 10px 0;
+  }
+}
+.alert-success{
+  background-color: #dff0d8;
+  color: #468847;
+}
+.alert-info{
+  background-color: #d9edf7;
+  color: #3a87ad;
+}
+.alert-warning{
+  background-color: #fcf8e3;
+  color: #c09853;
+}
+.alert-danger{
+  background-color: #f2dede;
+  color: #b94a48;
+}
+
+
+/**
+ * 
+ * OTHERS
+ * 
+ */
+/* main */
+#main{
+  margin: 30px auto;
+}
+
+/* page header */
+.page-header{
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+.page-header > div{
+  border-bottom: 1px solid #e6e6e6;
+}

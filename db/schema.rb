@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20131203194420) do
     t.text     "body_html"
     t.string   "status_cd"
     t.datetime "published_at"
+    t.string   "slug"
     t.integer  "category_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

@@ -34,7 +34,7 @@ gem "kramdown", "~> 1.2.0"
 gem "mathjax-rails", "~> 1.0.3"
 
 # Twitter's Bootstrap, converted to Sass and ready to drop into Rails or Compass
-gem "bootstrap-sass", "~> 3.0.2.1"
+gem "bootstrap-sass", "~> 3.0"
 
 # A small gem for putting selectize.js into the Rails asset pipeline
 gem "selectize-rails", "~> 0.8.5"

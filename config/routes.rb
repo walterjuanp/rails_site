@@ -1,6 +1,9 @@
 Site::Application.routes.draw do
   
   root :to => 'home#index'
+  
+  resources :posts, :only => [:index, :show]
+  match 'blog' => "posts#index", :as => :blog
 
   resources :user_sessions
   match 'login'   => "user_sessions#new",     :as => :login

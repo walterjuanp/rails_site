@@ -5,8 +5,15 @@ class Post < ActiveRecord::Base
   as_enum :status, [:draft, :pending_review, :published], :strings => true
   
   friendly_id :title, :use => :slugged
+  
+  # 
+  # convert_options => large => set the maximium width to 1170 respecting the aspect 
+  #                             ratio and crop the heigth if it is larger than 350
+  #
+  has_attached_file :featured_image, :styles => {:thumb => "100x100#", :large => '' },
+  :convert_options => { :large => '-auto-orient -resize "1170>" -crop "x350+0+0" +repage' }
 
-  attr_accessible :body_html, :body_kd, :published_at, :status, :title, :category_id, :tag_names
+  attr_accessible :body_html, :body_kd, :published_at, :featured_image, :status, :title, :category_id, :tag_names
   attr_accessor :tag_names
   
   belongs_to :category
@@ -14,6 +21,9 @@ class Post < ActiveRecord::Base
   
   validates :title, :body_kd, :status, :published_at, :slug, :presence => true
   validates :status, :as_enum => true
+  validates_attachment :featured_image,
+  :content_type => { :content_type => %w"image/jpg image/jpeg image/pjpeg image/gif image/png image/svg+xml image/tiff" },
+  :size => { :in => 0..4.megabytes }
   
   before_validation :parse_body_kd_to_html
   before_validation :set_tags_by_tag_names

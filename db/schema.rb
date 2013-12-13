@@ -37,9 +37,13 @@ ActiveRecord::Schema.define(:version => 20131203194420) do
     t.string   "status_cd"
     t.datetime "published_at"
     t.string   "slug"
+    t.string   "featured_image_file_name"
+    t.string   "featured_image_content_type"
+    t.integer  "featured_image_file_size"
+    t.datetime "featured_image_updated_at"
     t.integer  "category_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "posts_tags", :id => false, :force => true do |t|

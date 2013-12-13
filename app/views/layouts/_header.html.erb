@@ -23,10 +23,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a href="#">HOME /</a>
-          <a href="#">BLOG /</a>
-          <a href="#">ABOUT /</a>
-          <a href="#">SEARCH /</a>
+          <%= link_to I18n.tbtn('header.home'), root_path, :class => "#{active_by_controllers HomeController}" %>
+          <%= link_to I18n.tbtn('header.blog'), blog_path, :class => "#{active_by_controllers PostsController}" %>
+          <%= link_to I18n.tbtn('header.about'), '#' %>
+          <%= link_to I18n.tbtn('header.search'), '#' %>
         </div>
       </div>
     </div>

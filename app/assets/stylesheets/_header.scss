@@ -2,7 +2,7 @@
   color: #FFFFFF;
   a{
     color: #717b7e;
-    &:hover, .active{
+    &:hover, &.active{
       color: #FFFFFF;
     }
   }

@@ -23,3 +23,8 @@ en:
     posts: Posts
     dashboard: Dashboard
     images: Images
+    header:
+      blog: "BLOG /"
+      home: "HOME /"
+      about: "ABOUT /"
+      search: "SEARCH /"

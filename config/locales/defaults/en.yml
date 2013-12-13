@@ -8,6 +8,7 @@ en:
   # messages:
   # errors:
   app_name: Site
+  blog: Blog
   locales:
     en: English
     es: Spanish

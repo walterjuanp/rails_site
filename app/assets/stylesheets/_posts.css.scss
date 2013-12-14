@@ -13,13 +13,23 @@
   padding: 0;
   img{
     margin: auto;
+    transition: all 0.25s;
+  }
+  a img:hover{
+    opacity: 0.8;
   }
 }
 
 .post-entry{
   padding: 30px;
-  h2{
-    margin-top: 0;
+  .title{
+    h2{
+      margin-top: 0;
+      color: $orange-color;
+    }
+    a h2:hover{
+      color: $orange-dark-color;
+    }
   }
   .text{
     margin-bottom: 25px;

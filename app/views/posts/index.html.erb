@@ -9,3 +9,9 @@
     <%= render 'post', :post => post, :small => true %>
   <% end %>
 </section>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= will_paginate @posts %>
+  </div>
+</div>

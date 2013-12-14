@@ -16,6 +16,7 @@ a, a:visited, a:hover{
   transition: all 0.25s;
 }
 
+
 /**
  * 
  * GENERAL PURPOUSE  
@@ -55,10 +56,10 @@ a, a:visited, a:hover{
 
 /**
  * 
- * button
+ * BUTTONS
  * 
  */
-.button{
+@mixin button{
   background-color: $coal-color;
   color: $white-color;
   padding: 5px 10px;
@@ -68,6 +69,42 @@ a, a:visited, a:hover{
   &:hover{
     background-color: $orange-dark-color;
     color: $white-color;
+  }
+}
+.button{
+  @include button;
+}
+
+@mixin button-inside{
+  @include button;
+  color: $btn-inside-color;
+  background: $btn-inside-bg;
+  box-shadow: inset 0 1px 1px $btn-inside-shadow;
+  border-radius: 3px;
+  &:hover{
+    color: $white-color;
+  }
+}
+.button-inside{
+  @include button-inside;
+}
+
+/**
+ * 
+ * PAGINATION
+ * 
+ */
+.pagination{
+  margin-bottom: 30px;
+  .previous_page, .next_page, a{
+    @include button-inside;
+    margin: 0;
+  }
+  .current, .gap{
+    color: $btn-inside-color;
+  }
+  .disabled{
+    display: none;
   }
 }
 

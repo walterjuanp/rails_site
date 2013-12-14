@@ -18,7 +18,7 @@
         </h2>
         <div class="text">
           <% if small %>
-            <%= truncate_html post.body_html.html_safe, length: 200, omission: tview('post_continue', :link => post_path(post)) %>
+            <%= truncate_html post.body_html.html_safe, length: 400, omission: tview('post_continue', :link => post_path(post)) %>
           <% else %>
             <%= post.body_html.html_safe %>
           <% end %>

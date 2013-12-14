@@ -53,6 +53,23 @@ a, a:visited, a:hover{
   color: #b94a48;
 }
 
+/**
+ * 
+ * button
+ * 
+ */
+.button{
+  background-color: $coal-color;
+  color: $white-color;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin: 0 5px;
+  &:hover{
+    background-color: $orange-dark-color;
+    color: $white-color;
+  }
+}
 
 /**
  * 
@@ -69,4 +86,14 @@ a, a:visited, a:hover{
   margin-bottom: 30px;
   padding-bottom: 20px;
   border-bottom: 1px solid #e6e6e6;
+}
+
+.continue-reading{
+  margin-top: 35px;
+}
+
+.icon-and-text{
+  .icon{
+    margin-right: 10px;
+  }
 }

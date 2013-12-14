@@ -11,6 +11,9 @@
 
 .post-image{
   padding: 0;
+  img{
+    margin: auto;
+  }
 }
 
 .post-entry{
@@ -20,6 +23,17 @@
   }
   .text{
     margin-bottom: 25px;
+  }
+  .tags{
+    .tag-title{
+      margin-top: 20px;
+      color: $coal-ligth-color;
+      font-size: 12px;
+    }
+    .tag-links{
+      margin-bottom: 20px;
+      display: inline-block;
+    }
   }
   .extra{
     font-size: 12px;

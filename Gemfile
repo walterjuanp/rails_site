@@ -51,6 +51,9 @@ gem "paperclip", "~> 3.5.2"
 #   http://norman.github.io/friendly_id/4.0/file.Guide.html
 gem "friendly_id", "~> 4.0"
 
+# Truncates html so you don't have to
+gem "truncate_html", "~> 0.9.2"
+
 
 # Gems used only for assets and not required
 # in production environments by default.

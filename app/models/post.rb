@@ -7,11 +7,11 @@ class Post < ActiveRecord::Base
   friendly_id :title, :use => :slugged
   
   # 
-  # convert_options => large => set the maximium width to 1170 respecting the aspect 
+  # convert_options => large => set the maximium width to 970 respecting the aspect 
   #                             ratio and crop the heigth if it is larger than 350
   #
   has_attached_file :featured_image, :styles => {:thumb => "100x100#", :large => '' },
-  :convert_options => { :large => '-auto-orient -resize "1170>" -crop "x350+0+0" +repage' }
+  :convert_options => { :large => '-auto-orient -resize "970>" -crop "x350+0+0" +repage' }
 
   attr_accessible :body_html, :body_kd, :published_at, :featured_image, :status, :title, :category_id, :tag_names
   attr_accessor :tag_names

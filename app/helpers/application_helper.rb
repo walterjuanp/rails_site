@@ -1,4 +1,7 @@
 module ApplicationHelper
+  ###############################################
+  # HTML
+  ###############################################
   #
   #
   #
@@ -8,6 +11,9 @@ module ApplicationHelper
     end
   end
   
+  ###############################################
+  # CSS
+  ###############################################
   #
   #
   #
@@ -16,6 +22,19 @@ module ApplicationHelper
     # controller.action_name
     args.include?(controller.class) ? 'active' : ''
   end
+  
+  #
+  #
+  #
+  def active_by_controller_and_action controller_klass, action_str
+    if controller.class == controller_klass && controller.action_name == action_str
+      'active'
+    else
+      ''
+    end
+  end
+  
+  
   
   ###############################################
   # I18n

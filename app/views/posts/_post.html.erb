@@ -1,4 +1,5 @@
-<%# PARAMS: post
+<%# PARAMS: post  => Post
+#           small => Boolean
 %>
 
 <div class="row post">
@@ -16,28 +17,45 @@
           <%= link_to post.title, post_path(post) %>
         </h2>
         <div class="text">
-          <%= post.body_html.html_safe %>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-          <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+          <% if small %>
+            <%= truncate_html post.body_html.html_safe, length: 200, omission: tview('post_continue', :link => post_path(post)) %>
+          <% else %>
+            <%= post.body_html.html_safe %>
+          <% end %>
         </div>
+        
+        <% unless small %>
+          <div class="row tags">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="tag-title">
+                  <div class="col-md-12">
+                    <%= tag_icon_and_text post %>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="tag-links">
+                  <div class="col-md-12">
+                    <%= tag_buttons post %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
         
         <div class="row extra">
           <div class="col-md-2">
-            <p>
-              <span class="glyphicon glyphicon-calendar"></span>
-              &nbsp;
-              <%= l post.published_at, :format => :short_2 %>
-            </p>
+           <%= date_icon_and_text post %>
           </div>
-          <% if post.category%>
-            <div class="col-md-3">
-              <p>
-                <span class="glyphicon glyphicon-folder-open"></span>
-                &nbsp;
-                <%= link_to post.category.name, '#'%>
-              </p>
-            </div>
-          <% end %>
+          <div class="col-md-8">
+            <%= category_icon_and_text post %>
+          </div>
+          <div class="col-md-2">
+            <%= tag_icon_and_text post if small %>
+          </div>
         </div>
       </div>
     </div>

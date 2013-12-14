@@ -2,6 +2,8 @@
 en:
   views:
     defaults:
+      about: About
+      search: Search
       notice: Notice
       signed_as: "Signed in as %{email}"
       copy_to_clipboard: "Copy to clipboard: Ctrl+C, Enter"

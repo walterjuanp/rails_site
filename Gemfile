@@ -6,6 +6,8 @@ gem 'rails', '3.2.15'
 
 # Interface for SQLite3 database engine
 gem 'sqlite3'
+# A simple, fast Mysql library for Ruby, binding to libmysql
+gem "mysql2", "~> 0.3.14"
 
 # This gem provides jQuery and the jQuery-ujs driver for your Rails 3 application.
 gem 'jquery-rails'

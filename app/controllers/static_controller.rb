@@ -12,7 +12,8 @@ class StaticController < ApplicationController
     @tags = params[:tags]
     
     query = build_search_query @category, @tags
-    @posts = query.blank? ? [] : Post.joins(:tags).where(query).uniq
+    empty_search = @category.blank? && @tags.blank?
+    @posts = empty_search ? [] : Post.joins(:tags).where(query).uniq
   end
   
   private

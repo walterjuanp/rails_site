@@ -19,3 +19,6 @@
 
 # Ignore public/sytem folder
 public/system/
+
+# Ignore database configuration
+config/database.yml

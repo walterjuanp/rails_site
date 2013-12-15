@@ -54,7 +54,6 @@ gem "friendly_id", "~> 4.0"
 # Truncates html so you don't have to
 gem "truncate_html", "~> 0.9.2"
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -65,6 +64,11 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :development do
+  # RVM / Capistrano Integration Gem
+  gem "rvm-capistrano", "~> 1.5.1"
 end
 
 

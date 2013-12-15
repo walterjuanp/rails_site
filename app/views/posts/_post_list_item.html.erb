@@ -1,0 +1,28 @@
+<%# PARAMS: post  => Post
+#          
+%>
+
+<div class="row post">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12 post-entry post-list">
+        <div class="title">
+          <h2 class="title">
+            <%= link_to post.title, post_path(post) %>
+          </h2>
+        </div>
+        <div class="row extra">
+          <div class="col-md-2">
+           <%= date_icon_and_text post %>
+          </div>
+          <div class="col-md-8">
+            <%= category_icon_and_text post %>
+          </div>
+          <div class="col-md-2">
+            <%= tag_icon_and_text post %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,7 @@ Site::Application.routes.draw do
   
   match 'home'    => "static#home",   :as => :home
   match 'about'   => "static#about",  :as => :about
-  match 'serach'  => "static#search", :as => :search
+  match 'search'  => "static#search", :as => :search
 
   resources :user_sessions
   match 'login'   => "user_sessions#new",     :as => :login

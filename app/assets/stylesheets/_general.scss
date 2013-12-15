@@ -60,6 +60,7 @@ a, a:visited, a:hover{
  * 
  */
 @mixin button{
+  border: 0;
   background-color: $coal-color;
   color: $white-color;
   padding: 5px 10px;

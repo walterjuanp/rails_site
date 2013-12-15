@@ -25,7 +25,7 @@ module PostsHelper
   # Return the icon with text Tag or Tags
   #
   def tag_icon_and_text post
-    icon = post.tags.length == 1 ? 'glyphicon-tag' : 'glyphicon-tags'
+    icon = post.tags.length <= 1 ? 'glyphicon-tag' : 'glyphicon-tags'
     "<p class='icon-and-text'><span class='glyphicon #{icon} icon'></span><span>#{pluralize(post.tags.length, I18n.tmodel(Tag))}</span></p>".html_safe
   end
   

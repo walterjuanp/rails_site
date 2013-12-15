@@ -16,6 +16,7 @@
 // If you add more dire you need add new lines for "require_directory exemple_dir_name"
 //= require_directory .
 //= require prism
+//= require selectize
 
 $(document).ready(function(){
   /* alerts */

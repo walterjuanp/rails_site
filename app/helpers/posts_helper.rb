@@ -17,7 +17,7 @@ module PostsHelper
     link = if post.category.blank? 
       tview('uncategorized')
     else
-      link_to post.category.name, search_path(:category => post.category)
+      link_to post.category.name, search_path(:category => post.category.id)
     end
     "<p class='icon-and-text'><span class='glyphicon glyphicon-folder-open icon'></span><span>#{link}</span></p>".html_safe
   end
@@ -37,7 +37,7 @@ module PostsHelper
     
     html = ''
     for tag in post.tags
-      html += link_to tag.name, search_path(:tags => tag), :class => 'button'
+      html += link_to tag.name, search_path(:tags => tag.id), :class => 'button'
     end
     
     return html.html_safe

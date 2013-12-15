@@ -22,3 +22,7 @@ public/system/
 
 # Ignore database configuration
 config/database.yml
+
+# Capistrano files
+Capfile
+config/deploy.rb

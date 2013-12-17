@@ -54,8 +54,6 @@ GEM
     coffee-script-source (1.6.3)
     erubis (2.7.0)
     execjs (2.0.2)
-    friendly_id (4.0.10.1)
-      activerecord (>= 3.0, < 4.0)
     highline (1.6.20)
     hike (1.2.3)
     i18n (0.6.9)
@@ -151,7 +149,6 @@ DEPENDENCIES
   authlogic (~> 3.3.0)
   bootstrap-sass (~> 3.0)
   coffee-rails (~> 3.2.1)
-  friendly_id (~> 4.0)
   jquery-rails
   kramdown (~> 1.2.0)
   mathjax-rails (~> 1.0.3)

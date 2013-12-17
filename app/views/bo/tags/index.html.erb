@@ -12,7 +12,6 @@
       <thead>
         <tr>
           <th><%= I18n.tattr(Tag, :name) %></th>
-          <th><%= I18n.tattr(Tag, :slug) %></th>
           <th></th>
         </tr>
       </thead>
@@ -20,7 +19,6 @@
         <% for tag in @tags %>
           <tr>
             <td><%= tag.name %></td>
-            <td><%= tag.slug %></td>
             <td class="align-right btn-group-for-3-btns">
               <div class="btn-group">
                 <%= link_to bo_tag_path(tag), :class => 'btn btn-default' do %>

@@ -6,7 +6,6 @@ class CreatePosts < ActiveRecord::Migration
       t.text        :body_html
       t.string      :status_cd
       t.datetime    :published_at
-      t.string      :slug
       t.attachment  :featured_image
       t.references  :category
 

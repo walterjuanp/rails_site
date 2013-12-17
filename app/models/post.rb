@@ -1,10 +1,8 @@
 class Post < ActiveRecord::Base
-  extend FriendlyId
   
   # Post.statuses get all status
   as_enum :status, [:draft, :pending_review, :published], :strings => true
   
-  friendly_id :title, :use => :slugged
   
   # 
   # convert_options => large => set the maximium width to 970 respecting the aspect 
@@ -19,7 +17,7 @@ class Post < ActiveRecord::Base
   belongs_to :category
   has_and_belongs_to_many :tags, :uniq => true, :validate => true
   
-  validates :status, :published_at, :slug, :presence => true
+  validates :status, :published_at, :presence => true
   validates :status, :as_enum => true
   validates_attachment :featured_image,
   :content_type => { :content_type => %w"image/jpg image/jpeg image/pjpeg image/gif image/png image/svg+xml image/tiff" },

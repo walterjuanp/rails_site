@@ -12,7 +12,6 @@
       <thead>
         <tr>
           <th><%= I18n.tattr(Category, :name) %></th>
-          <th><%= I18n.tattr(Category, :slug) %></th>
           <th></th>
         </tr>
       </thead>
@@ -20,7 +19,6 @@
         <% for category in @categories %>
           <tr>
             <td><%= category.name %></td>
-            <td><%= category.slug %></td>
             <td class="align-right btn-group-for-3-btns">
               <div class="btn-group">
                 <%= link_to bo_category_path(category), :class => 'btn btn-default' do %>

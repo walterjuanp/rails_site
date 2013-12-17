@@ -11,18 +11,21 @@ class StaticController < ApplicationController
     @category = params[:category]
     @tags = params[:tags]
     
-    query = build_search_query @category, @tags
-    empty_search = @category.blank? && @tags.blank?
-    @posts = empty_search ? [] : Post.joins(:tags).where(query).uniq
+    @posts = build_search_query @category, @tags
   end
   
   private
   def build_search_query category, tags
-    query = {:status_cd => Post.status_published}
-
-    query.merge! :category_id => category unless category.blank?
-    query.merge! :tags => {:id => tags.split(',')} unless tags.blank?
+    return [] if category.blank? && tags.blank?
     
-    query
+    query = {:status_cd => Post.status_published}
+    query.merge! :category_id => category unless category.blank?
+    
+    if tags.blank?
+      Post.where(query).uniq
+    else
+      query.merge! :tags => {:id => tags.split(',')}
+      Post.joins(:tags).where(query).uniq
+    end
   end
 end

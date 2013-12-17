@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(:version => 20131203194420) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.string   "slug"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -36,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20131203194420) do
     t.text     "body_html"
     t.string   "status_cd"
     t.datetime "published_at"
-    t.string   "slug"
     t.string   "featured_image_file_name"
     t.string   "featured_image_content_type"
     t.integer  "featured_image_file_size"
@@ -53,7 +51,6 @@ ActiveRecord::Schema.define(:version => 20131203194420) do
 
   create_table "tags", :force => true do |t|
     t.string   "name"
-    t.string   "slug"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

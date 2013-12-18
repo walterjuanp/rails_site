@@ -8,10 +8,10 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  * 
- *= require_self
  *= require prism
  *= require selectize
  *= require selectize.default
+ *= require_self
  */
 
 /* Custom vars and overwrite some from Bootstrap */
@@ -19,6 +19,15 @@
 
 /* Twitter Bootstrap */
 @import 'bootstrap-custom';
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+  margin: .5em 0 2em 0;
+}
+pre[class*="language-"] {
+  margin: .5em 0 2em 0;
+}
 
 
 @import 'general';

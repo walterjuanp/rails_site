@@ -17,6 +17,7 @@
 //= require_directory .
 //= require prism
 //= require selectize
+//= require jquery.flexnav
 
 $(document).ready(function(){
   /* alerts */
@@ -24,4 +25,7 @@ $(document).ready(function(){
   $('div.alert').click(function(eventObject){
     $(this).slideUp();
   });
+  
+  /* flexnav */
+  $(".flexnav").flexNav();
 });

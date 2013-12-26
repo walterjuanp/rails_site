@@ -43,7 +43,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <p><b>Add images</b></p>
+    <p><b><%= tview 'add_images' %></b></p>
     <% for image in @images %>
       <div class="gallery-image-list">
         <%= image_tag image.image.url(:thumb) %>

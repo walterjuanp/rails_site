@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20131203194420) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -45,8 +47,10 @@ ActiveRecord::Schema.define(:version => 20131203194420) do
   end
 
   create_table "posts_tags", :id => false, :force => true do |t|
-    t.integer "post_id"
-    t.integer "tag_id"
+    t.integer  "post_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tags", :force => true do |t|

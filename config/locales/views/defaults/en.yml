@@ -3,6 +3,7 @@ en:
   views:
     defaults:
       about: About
+      blog: Blog
       search: Search
       notice: Notice
       signed_as: "Signed in as %{email}"

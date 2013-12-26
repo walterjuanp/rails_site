@@ -4,6 +4,8 @@ class CreateImages < ActiveRecord::Migration
       t.string      :name
       t.string      :alt
       t.attachment  :image
+
+      t.timestamps
     end
   end
 end

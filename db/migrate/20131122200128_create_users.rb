@@ -24,6 +24,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :last_name
       t.string  :nickname
       t.text    :bio
+      
       t.timestamps
     end
   end

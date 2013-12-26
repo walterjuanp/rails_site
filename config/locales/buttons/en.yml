@@ -10,6 +10,8 @@ en:
     cancel: Cancel
     show: Show
     edit: Edit
+    media: Media
+    galleries: Galleries
     destroy: Destroy
     add_new: Add new
     list_of_users: List of users

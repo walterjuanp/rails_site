@@ -17,8 +17,16 @@
         <li class="<%= active_by_controllers Bo::PostsController %>">
           <%= link_to I18n.tbtn('posts'), bo_posts_path %>
         </li>
-        <li class="<%= active_by_controllers Bo::ImagesController %>">
-          <%= link_to I18n.tbtn('images'), bo_images_path %>
+        <li class="dropdown <%= active_by_controllers Bo::ImagesController %>">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= I18n.tbtn('media') %> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to I18n.tbtn('galleries'), '#' %>
+            </li>
+            <li>
+              <%= link_to I18n.tbtn('images'), bo_images_path %>
+            </li>
+          </ul>
         </li>
         <li class="<%= active_by_controllers Bo::TagsController %>">
           <%= link_to I18n.tbtn('tags'), bo_tags_path %>

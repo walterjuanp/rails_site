@@ -1,0 +1,23 @@
+.gallery-image-list{
+  display: inline-block;
+  position: relative;
+  margin: 10px 10px 0 0;
+  img{
+    height: 100px;
+    width: 100px;
+  }
+  &:hover .btn{
+    display: block;
+  }
+  .btn{
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+  .label{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+}

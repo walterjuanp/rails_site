@@ -1,0 +1,44 @@
+<% content_for_header I18n.tmodel(Gallery), tview('list_of_galleries') %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to I18n.tbtn('add_new'), new_bo_gallery_path, :class => 'btn btn-default' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th><%= I18n.tattr(Gallery, :images) %></th>
+          <th><%= I18n.tattr(Gallery, :name) %></th>
+          <th><%= I18n.tattr(Gallery, :description) %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for gallery in @galleries %>
+          <tr>
+            <td><%= gallery.images.count %></td>
+            <td><%= gallery.name %></td>
+            <td><%= truncate gallery.description, :length => 100 %></td>
+            <td class="align-right btn-group-for-4-btns">
+              <div class="btn-group">
+                <%= link_to bo_gallery_path(gallery), :class => 'btn btn-default' do %>
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                <% end %>
+                <%= link_to edit_bo_gallery_path(gallery), :class => 'btn btn-default' do %>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                <% end %>
+                <%= link_to bo_gallery_path(gallery), :class => 'btn btn-danger', :confirm => I18n.tmsg('are_you_sure'), :method => :delete do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

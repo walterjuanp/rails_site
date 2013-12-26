@@ -61,6 +61,7 @@ module ApplicationHelper
     a += '.' if a.length > 0
     
     # get view
+    puts "@@@@@@ ===> views.#{a}#{controller_name}.#{key}"
     t "views.#{a}#{controller_name}.#{key}", params_and_default
   end
 end

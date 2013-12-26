@@ -1,0 +1,10 @@
+
+en:
+  activerecord:
+    models:
+      gallery: Gallery
+    attributes:
+      gallery:
+        name: Name
+        description: Description
+        images: Images

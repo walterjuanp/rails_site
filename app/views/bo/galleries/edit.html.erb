@@ -1,0 +1,17 @@
+<% content_for_header I18n.tmodel(Gallery), tview('edit_gallery') %>
+
+<div class="row action-buttons">
+  <div class="col-md-7">
+    <%= link_to I18n.tbtn('cancel'), bo_gallery_path(@gallery), :class => 'btn btn-default' %>
+  </div>
+  <div class="col-md-5 align-right">
+    <div class="btn-group">
+      <%= link_to 'javascript:void(0)', :class => 'btn btn-primary', :onclick => '$("form").submit()' do %>
+        <span class="glyphicon glyphicon-floppy-disk"></span>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render 'form', :gallery => @gallery %><br />
+

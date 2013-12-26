@@ -1,0 +1,9 @@
+
+en:
+  views:
+    bo:
+      galleries:
+        list_of_galleries: List of galleries
+        galleries: Galleries
+        new_gallery: New gallery
+        edit_gallery: Edit gallery

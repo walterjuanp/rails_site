@@ -13,7 +13,7 @@ class Bo::ImagesController < Bo::BaseController
   
   def create
     @image = Image.new(params[:image])
-   
+    
     if @image.save
       redirect_to [:bo, @image], :notice => I18n.tmsg('successfully_created', :model => I18n.tmodel(Image))
     else
@@ -37,8 +37,8 @@ class Bo::ImagesController < Bo::BaseController
   
   def destroy
     @image = Image.find(params[:id])
+
     @image.destroy
-   
     redirect_to bo_images_url, :notice => I18n.tmsg('successfully_destroyed', :model => I18n.tmodel(Image))
   end
 end

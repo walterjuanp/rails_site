@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   def require_user
     logger.debug "* ApplicationController::require_user"
     unless current_user
-      flash[:notice] = I18n.terr('logged_in_to_access')
+      flash[:error] = I18n.terr('logged_in_to_access')
       redirect_to root_url
       return false
     end
@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   def require_no_user
     logger.debug "* ApplicationController::require_no_user"
     if current_user
-      flash[:notice] = I18n.terr('logged_out_to_access')
+      flash[:error] = I18n.terr('logged_out_to_access')
       redirect_to root_url
       return false
     end

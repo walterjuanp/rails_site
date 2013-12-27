@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   has_attached_file :featured_image, :styles => {:thumb => "100x100#", :large => '' },
   :convert_options => { :large => '-auto-orient -resize "970>" -crop "x350+0+0" +repage -alpha set -virtual-pixel transparent -channel A -blur 0x8 -level 50%,100% +channel' }
 
-  attr_accessible :body_html, :body_kd, :published_at, :featured_image, :status, :title, :category_id, :tag_names
+  attr_accessible :body_html, :body_kd, :published_at, :featured_image, :status, :title, :category_id, :tag_names, :gallery_id
   attr_accessor :tag_names
   
   belongs_to :category

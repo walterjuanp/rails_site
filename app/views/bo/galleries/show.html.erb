@@ -45,49 +45,6 @@
   </div>
 </div>
 
-<script>
-var galleryImageSortable = {
-  array: null,
-}
-$(document).ready(function(){
-  $( "#gallery-image-sortable" ).sortable({
-    placeholder: "ui-state-highlight",
-    update: function(event, ui){
-      var endArray = $(this).sortable('toArray');
-      var itemId = ui.item.attr('id');
-      var galleryID = <%= @gallery.id %>;
-      var imageID = parseInt(itemId.split('_')[1]);
-      var basePostURL = "<%= bo_ajax_gallery_image_pos_path('%gallery_id%', '%image_id%') %>";
-      var postURL = basePostURL.replace('%gallery_id%', galleryID);
-      postURL = postURL.replace('%image_id%', imageID);
-      
-      
-      console.log(new Date, "The item " + itemId + " has updated to pos: ", endArray.indexOf(itemId));
-      
-      $('#images-row').addClass('disabled-row');
-      $('#add-images-row').addClass('disabled-row');
-      
-      $.ajax({
-        type: "POST",
-        url: postURL,
-        data: {
-          pos: endArray.indexOf(itemId)+1
-        },
-        success: function(data, textStatus, jqXHR){
-          if( data.status ){
-            $('#images-row').removeClass('disabled-row');
-            $('#add-images-row').removeClass('disabled-row');
-          }else{
-            alert('Error!')
-          }
-        }
-      });
-    }
-  }); 
-  $( "#gallery-image-sortable" ).disableSelection();
-});
-</script>
-
 <div id="add-images-row" class="row">
   <div class="col-md-12">
     <p><b><%= tview 'add_images' %></b></p>
@@ -116,4 +73,41 @@ $(document).ready(function(){
     <%= will_paginate @images %>
   </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $( "#gallery-image-sortable" ).sortable({
+    placeholder: "ui-state-highlight",
+    update: function(event, ui){
+      var endArray = $(this).sortable('toArray');
+      var itemId = ui.item.attr('id');
+      var galleryID = <%= @gallery.id %>;
+      var imageID = parseInt(itemId.split('_')[1]);
+      var basePostURL = "<%= bo_ajax_gallery_image_pos_path('%gallery_id%', '%image_id%') %>";
+      var postURL = basePostURL.replace('%gallery_id%', galleryID);
+      postURL = postURL.replace('%image_id%', imageID);
+      
+      $('#images-row').addClass('disabled-row');
+      $('#add-images-row').addClass('disabled-row');
+      
+      $.ajax({
+        type: "POST",
+        url: postURL,
+        data: {
+          pos: endArray.indexOf(itemId)+1
+        },
+        success: function(data, textStatus, jqXHR){
+          if( data.status ){
+            $('#images-row').removeClass('disabled-row');
+            $('#add-images-row').removeClass('disabled-row');
+          }else{
+            alert('Error!')
+          }
+        }
+      });
+    }
+  }); 
+  $( "#gallery-image-sortable" ).disableSelection();
+});
+</script>
 

@@ -33,7 +33,7 @@
     <% for image in @gallery.images %>
       <div class="gallery-image-list">
         <%= image_tag image.image.url(:thumb) %>
-        <%= link_to bo_gallery_delete_image_path(@gallery, image, :page => params[:page]), :class => 'btn btn-danger btn-xs', :confirm => I18n.tmsg('are_you_sure'), :method => :delete do %>
+        <%= link_to bo_gallery_delete_image_path(@gallery, image, :page => params[:page]), :class => 'btn btn-danger btn-xs', :method => :delete do %>
           <span class="glyphicon glyphicon-trash"></span>
         <% end %>
       </div>
@@ -51,7 +51,7 @@
           <span class="label label-success">
             <span class="glyphicon glyphicon-ok-circle"></span>
           </span>
-          <%= link_to bo_gallery_delete_image_path(@gallery, image, :page => params[:page]), :class => 'btn btn-danger btn-xs', :confirm => I18n.tmsg('are_you_sure'), :method => :delete do %>
+          <%= link_to bo_gallery_delete_image_path(@gallery, image, :page => params[:page]), :class => 'btn btn-danger btn-xs', :method => :delete do %>
             <span class="glyphicon glyphicon-trash"></span>
           <% end %>
         <% else %>

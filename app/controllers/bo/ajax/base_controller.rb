@@ -1,5 +1,5 @@
-class Bo::AjaxController < Bo::BaseController
-  layout :false
+class Bo::Ajax::BaseController < Bo::BaseController
+  layout false
   
   def kramdown_to_html
     str = params[:str]

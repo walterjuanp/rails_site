@@ -27,9 +27,12 @@ ActiveRecord::Schema.define(:version => 20131226131714) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "galleries_images", :id => false, :force => true do |t|
-    t.integer "gallery_id"
-    t.integer "image_id"
+  create_table "gallery_images", :force => true do |t|
+    t.integer  "gallery_id"
+    t.integer  "image_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "images", :force => true do |t|
@@ -54,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20131226131714) do
     t.integer  "featured_image_file_size"
     t.datetime "featured_image_updated_at"
     t.integer  "category_id"
+    t.integer  "gallery_id"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end

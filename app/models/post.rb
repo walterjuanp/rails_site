@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
   attr_accessor :tag_names
   
   belongs_to :category
+  belongs_to :gallery
   has_and_belongs_to_many :tags, :uniq => true, :validate => true
   
   validates :status, :published_at, :presence => true

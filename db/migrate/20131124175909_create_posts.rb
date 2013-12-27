@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration
       t.datetime    :published_at
       t.attachment  :featured_image
       t.references  :category
+      t.references  :gallery
 
       t.timestamps
     end

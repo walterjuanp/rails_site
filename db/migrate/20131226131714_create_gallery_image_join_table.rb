@@ -1,8 +1,11 @@
 class CreateGalleryImageJoinTable < ActiveRecord::Migration
   def change
-    create_table :galleries_images, :id => false do |t|
-      t.integer :gallery_id
-      t.integer :image_id
+    create_table :gallery_images do |t|
+      t.references  :gallery
+      t.references  :image
+      t.integer     :position
+      
+      t.timestamps
     end
   end
 end

@@ -11,5 +11,8 @@ en:
         status: Status
         published_at: Publication date
         category: Category
+        category_id: Category
         tags: Tags
         featured_image: Featured image
+        gallery: Gallery
+        gallery_id: Gallery

@@ -11,6 +11,7 @@
  * Change "require_tree ." for "require_directory ." for discard the bo
  * If you add more dire you need add new lines for "require_directory exemple_dir_name"
  *= require_directory .
+ *= require jquery.ui.all
  *= require ../prism
  *= require selectize
  *= require selectize.bootstrap3
@@ -84,7 +85,7 @@ textarea.code{
 .fixed-action-buttons{
   position: fixed;
   top: 60px;
-  z-index: 1030;
+  z-index: 1020;
 }
 .fake-action-buttons{
   display: block;

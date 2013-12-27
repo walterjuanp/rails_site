@@ -12,6 +12,9 @@ gem "mysql2", "~> 0.3.14"
 # This gem provides jQuery and the jQuery-ujs driver for your Rails 3 application.
 gem 'jquery-rails'
 
+# jQuery UI's JavaScript, CSS, and image files packaged for the Rails 3.1+ asset pipeline
+gem "jquery-ui-rails", "~> 4.1.1"
+
 # ZURB Foundation on Sass/Compass
 # gem "zurb-foundation", "~> 5.0.0"
 
@@ -46,6 +49,11 @@ gem "paperclip", "~> 3.5.2"
 
 # Truncates html so you don't have to
 gem "truncate_html", "~> 0.9.2"
+
+# This "acts_as" extension provides the capabilities for sorting and reordering a 
+# number of objects in a list. The class that has this specified needs to have a 
+# "position" column defined as an integer on the mapped database table.
+gem "acts_as_list", "~> 0.3.0"
 
 # Gems used only for assets and not required
 # in production environments by default.

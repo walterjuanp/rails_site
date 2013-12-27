@@ -25,8 +25,11 @@ Site::Application.routes.draw do
       match "/add_image/:id"    => "galleries#add_image",     :via => :post,    :as => :add_image
       match "/delete_image/:id" => "galleries#delete_image",  :via => :delete,  :as => :delete_image
     end
-    resources :ajax, :only => [] do
-      post 'kramdown_to_html', :on  => :collection
+    namespace :ajax do
+      post 'kramdown_to_html' => 'base#kramdown_to_html'
+      resources :galleries, :only => [] do 
+        match "/image_pos/:id"    => "galleries#image_pos", :via => :post, :as => :image_pos
+      end
     end
   end
   

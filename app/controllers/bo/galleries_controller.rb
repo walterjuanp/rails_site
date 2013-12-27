@@ -48,7 +48,7 @@ class Bo::GalleriesController < Bo::BaseController
     @image = Image.find(params[:id])
     
     @gallery.images << @image
-    redirect_to bo_gallery_url(@gallery, :page => params[:page]), :notice => I18n.tmsg('successfully_added', :model => I18n.tmodel(Image))
+    redirect_to bo_gallery_url(@gallery, :page => params[:page])
   end
   
   def delete_image
@@ -56,7 +56,7 @@ class Bo::GalleriesController < Bo::BaseController
     @image = Image.find(params[:id])
     
     @gallery.images.delete(@image)
-    redirect_to bo_gallery_url(@gallery, :page => params[:page]), :notice => I18n.tmsg('successfully_destroyed', :model => I18n.tmodel(Image))
+    redirect_to bo_gallery_url(@gallery, :page => params[:page])
   end
   
 end

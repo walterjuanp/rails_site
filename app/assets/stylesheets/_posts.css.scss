@@ -73,3 +73,39 @@
     margin-top: 10px;
   }
 }
+
+
+.jcarousel {
+  position: relative;
+  overflow: hidden;
+  ul {
+      width: 20000em;
+      position: relative;
+  
+      /* Optional, required in this case since it's a <ul> element */
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+  li {
+      /* Required only for block elements like <li>'s */
+      float: left;
+      margin-right: 5px;
+  }
+  .jcarousel-next, .jcarousel-prev{
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    font-size: 10px;
+  }
+  .jcarousel-next{
+    right: 0;
+  }
+  .jcarousel-prev{
+    left: 0;
+  }
+  .jcarousel-next.button, .jcarousel-prev.button{
+    padding: 3px 5px;
+  }
+}
+

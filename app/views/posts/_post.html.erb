@@ -1,5 +1,4 @@
 <%# PARAMS: post  => Post
-#           small => Boolean
 %>
 
 <div class="row post">
@@ -7,13 +6,7 @@
     <% unless post.featured_image.blank? %>
       <div class="row">
         <div class="col-md-12 post-image">
-          <% if small %>
-            <%= link_to post_path(post) do %>
-              <%= image_tag post.featured_image(:large), :class => 'img-responsive'%>
-            <% end %>
-          <% else %>
-            <%= image_tag post.featured_image(:large), :class => 'img-responsive'%>
-          <% end %>
+          <%= image_tag post.featured_image(:large), :class => 'img-responsive'%>
         </div>
       </div>
     <% end %>
@@ -21,22 +14,14 @@
       <div class="col-md-12 post-entry">
         <div class="title">
           <h2 class="title">
-            <% if small %>
-              <%= link_to post.title, post_path(post) %>
-            <% else %>
-              <%= post.title %>
-            <% end %>
+            <%= post.title %>
           </h2>
         </div>
         <div class="text">
-          <% if small %>
-            <%= truncate_html post.body_html.html_safe, length: 400, omission: tview('post_continue', :link => post_path(post)) %>
-          <% else %>
-            <%= post.body_html.html_safe %>
-          <% end %>
+          <%= post.body_html.html_safe %>
         </div>
         
-        <% unless small || post.gallery.blank? %>
+        <% unless post.gallery.blank? %>
           <div class="row gallery">
             <div class="col-md-12">
               <div class="row">
@@ -53,7 +38,7 @@
                     <ul class="magnific-gallery">
                       <% for image in post.gallery.images %>
                         <li>
-                          <%= link_to image.image.url(:original) do %>
+                          <%= link_to image.image.url(:original), :title => image.name do %>
                             <%= image_tag image.image.url(:thumb) %>
                           <% end %>
                         </li>
@@ -68,27 +53,25 @@
           </div>
         <% end %>
         
-        <% unless small %>
-          <div class="row tags">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="tag-title">
-                  <div class="col-md-12">
-                    <%= tag_icon_and_text post %>
-                  </div>
+        <div class="row tags">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="tag-title">
+                <div class="col-md-12">
+                  <%= tag_icon_and_text post %>
                 </div>
               </div>
-              
-              <div class="row">
-                <div class="tag-links">
-                  <div class="col-md-12">
-                    <%= tag_buttons post %>
-                  </div>
+            </div>
+            
+            <div class="row">
+              <div class="tag-links">
+                <div class="col-md-12">
+                  <%= tag_buttons post %>
                 </div>
               </div>
             </div>
           </div>
-        <% end %>
+        </div>
         
         <div class="row extra">
           <div class="col-md-2">
@@ -98,7 +81,6 @@
             <%= category_icon_and_text post %>
           </div>
           <div class="col-md-2">
-            <%= tag_icon_and_text post if small %>
           </div>
         </div>
       </div>
@@ -106,62 +88,24 @@
   </div>
 </div>
 
-
-<style>
-.jcarousel {
-    position: relative;
-    overflow: hidden;
-}
-.jcarousel ul {
-    width: 20000em;
-    position: relative;
-
-    /* Optional, required in this case since it's a <ul> element */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.jcarousel li {
-    /* Required only for block elements like <li>'s */
-    float: left;
-    margin-right: 5px;
-}
-
-.jcarousel .jcarousel-next, .jcarousel .jcarousel-prev{
-  position: absolute;
-  top: 50%;
-  margin-top: -10px;
-  font-size: 10px;
-}
-.jcarousel .jcarousel-next{
-  right: 0;
-}
-.jcarousel .jcarousel-prev{
-  left: 0;
-}
-.jcarousel .jcarousel-next.button, .jcarousel .jcarousel-prev.button{
-  padding: 3px 5px;
-}
-</style>
-
 <script>
-$(document).ready(function(){
-  $('.jcarousel').jcarousel();
-  
-  $('.jcarousel-prev').on('jcarouselcontrol:active', function() {
-    $('.jcarousel-prev').show();
+  $(document).ready(function(){
+    $('.jcarousel').jcarousel();
+    
+    $('.jcarousel-prev').on('jcarouselcontrol:active', function() {
+      $('.jcarousel-prev').show();
+    });
+    $('.jcarousel-prev').on('jcarouselcontrol:inactive', function() {
+      $('.jcarousel-prev').hide();
+    });
+    $('.jcarousel-next').on('jcarouselcontrol:active', function() {
+      $('.jcarousel-next').show();
+    });
+    $('.jcarousel-next').on('jcarouselcontrol:inactive', function() {
+      $('.jcarousel-next').hide();
+    });
+    
+    $('.jcarousel-prev').jcarouselControl({target: '-=2'});
+    $('.jcarousel-next').jcarouselControl({target: '+=2'});
   });
-  $('.jcarousel-prev').on('jcarouselcontrol:inactive', function() {
-    $('.jcarousel-prev').hide();
-  });
-  $('.jcarousel-next').on('jcarouselcontrol:active', function() {
-    $('.jcarousel-next').show();
-  });
-  $('.jcarousel-next').on('jcarouselcontrol:inactive', function() {
-    $('.jcarousel-next').hide();
-  });
-  
-  $('.jcarousel-prev').jcarouselControl({target: '-=2'});
-  $('.jcarousel-next').jcarouselControl({target: '+=2'});
-});
 </script>

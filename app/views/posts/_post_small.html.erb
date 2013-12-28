@@ -1,0 +1,41 @@
+<%# PARAMS: post  => Post
+%>
+
+<div class="row post">
+  <div class="col-md-12">
+    <% unless post.featured_image.blank? %>
+      <div class="row">
+        <div class="col-md-12 post-image">
+          <%= link_to post_path(post) do %>
+            <%= image_tag post.featured_image(:large), :class => 'img-responsive'%>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    
+    <div class="row">
+      <div class="col-md-12 post-entry">
+        <div class="title">
+          <h2 class="title">
+            <%= link_to post.title, post_path(post) %>
+          </h2>
+        </div>
+        <div class="text">
+          <%= truncate_html post.body_html.html_safe, length: 400, omission: tview('post_continue', :link => post_path(post)) %>
+        </div>
+        
+        <div class="row extra">
+          <div class="col-md-2">
+           <%= date_icon_and_text post %>
+          </div>
+          <div class="col-md-8">
+            <%= category_icon_and_text post %>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

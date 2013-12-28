@@ -3,15 +3,7 @@ class Post < ActiveRecord::Base
   # Post.statuses get all status
   as_enum :status, [:draft, :pending_review, :published], :strings => true
   
-  
-  # 
-  # convert_options => large => set the maximium width to 970 respecting the aspect 
-  #                             ratio, crop the heigth if it is larger than 350 and
-  #                             blur the sides (warning only png/gif images can blur)
-  #
-  has_attached_file :featured_image, :styles => {:thumb => "100x100#", :large => '' },
-  :convert_options => { :large => '-auto-orient -resize "970>" -crop "x350+0+0" +repage -alpha set -virtual-pixel transparent -channel A -blur 0x8 -level 50%,100% +channel' }
-
+  has_attached_file :featured_image, :styles => {:thumb => "100x100#", :large => '970x350#' }
   attr_accessible :body_html, :body_kd, :published_at, :featured_image, :status, :title, :category_id, :tag_names, :gallery_id
   attr_accessor :tag_names
   

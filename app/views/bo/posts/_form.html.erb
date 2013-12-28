@@ -47,7 +47,7 @@
         <div class="form-group">
           <%= f.label :gallery_id, :class => 'col-sm-2 control-label' %>
           <div class="col-sm-5">
-            <%= f.select :gallery_id, [], :class => 'form-control selectize' %>
+            <%= f.collection_select :gallery_id, Gallery.all, :id, :name, :class => 'form-control selectize' %>
           </div>
         </div>
         
@@ -151,6 +151,7 @@ $(document).ready(function(){
       },
       option: function(item, escape) {
         var imgTag = item.thumb ? '<img src="' + escape(item.thumb) + '" alt=""/>' : '<div></div>';
+        var thereAreText = "<%= t 'there_are_n_images_in_gallery' %>";
         return '<table class="selectize-post-gallery">' +
                   '<tr>' +
                     '<td rowspan="3" class="image">' + imgTag + '</td>' +
@@ -160,7 +161,7 @@ $(document).ready(function(){
                     '<td class="description"><span>' + escape(item.description) + '</span></td>' +
                   '</tr>' +
                   '<tr>' +
-                    '<td class="number"><span>There are ' + escape(item.n_images) + ' images in this gallery</span></td>' +
+                    '<td class="number"><span>' + thereAreText.replace('%n_images%', escape(item.n_images)) + '</span></td>' +
                   '</tr>' +
                 '</table>';
       }

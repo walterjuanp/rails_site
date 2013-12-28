@@ -9,6 +9,7 @@ en:
   # errors:
   app_name: Site
   blog: Blog
+  there_are_n_images_in_gallery: There are %n_images% images in this gallery 
   locales:
     en: English
     es: Spanish

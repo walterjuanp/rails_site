@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  STYLES = {:medium => '300x300#', :thumb => "100x100#"}
+  STYLES = {:medium => '500x350#', :thumb => "100x100#"}
   
   attr_accessible   :image, :name, :alt
   has_attached_file :image, :styles => STYLES

@@ -12,12 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-// Change "require_tree ." for "require_directory ." for discard the bo
-// If you add more dire you need add new lines for "require_directory exemple_dir_name"
-//= require_directory .
+// We need the jquery migrate plugin because some other plugins use old functions
+//= require jquery-migrate-1.2.1.min 
 //= require prism
 //= require selectize
 //= require jquery.flexnav
+//= require jquery.jcarousel
+//= require jquery.jcarousel-control
+//= require magnific-popup/magnific-popup
 
 $(document).ready(function(){
   /* alerts */
@@ -28,4 +30,15 @@ $(document).ready(function(){
   
   /* flexnav */
   $(".flexnav").flexNav();
+  
+  /* magnific popup gallery */
+  $('.magnific-gallery').each(function() { // the containers for all your galleries
+    $(this).magnificPopup({
+      delegate: 'a', // the selector for gallery item
+      type: 'image',
+      gallery: {
+        enabled:true
+      }
+    });
+  });
 });

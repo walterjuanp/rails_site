@@ -53,6 +53,17 @@ a, a:visited, a:hover{
   background-color: #f2dede;
   color: #b94a48;
 }
+.strikethrough{
+  text-decoration:line-through;
+}
+
+.display-as-table{
+  display: table;
+}
+.display-as-table .cell{
+  display: table-cell;
+  vertical-align: middle;
+}
 
 /**
  * 

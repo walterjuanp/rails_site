@@ -47,9 +47,6 @@ gem "selectize-rails", "~> 0.8.5"
 # Easy upload management for ActiveRecord
 gem "paperclip", "~> 3.5.2"
 
-# Truncates html so you don't have to
-gem "truncate_html", "~> 0.9.2"
-
 # This "acts_as" extension provides the capabilities for sorting and reordering a 
 # number of objects in a list. The class that has this specified needs to have a 
 # "position" column defined as an integer on the mapped database table.

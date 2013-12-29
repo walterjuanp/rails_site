@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   as_enum :status, [:draft, :pending_review, :published], :strings => true
   
   has_attached_file :featured_image, :styles => {:thumb => "100x100#", :large => '970x350#' }
-  attr_accessible :body_html, :body_kd, :published_at, :featured_image, :status, :title, :category_id, :tag_names, :gallery_id
+  attr_accessible :body_html, :intro_text, :body_kd, :published_at, :featured_image, :status, :title, :category_id, :tag_names, :gallery_id
   attr_accessor :tag_names
   
   belongs_to :category

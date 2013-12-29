@@ -39,6 +39,10 @@
       <dd><%= tag_list @post.tags %></dd>
       <dt><%= I18n.tattr(Post, :title) %></dt>
       <dd><%= @post.title %></dd>
+      <dt><%= I18n.tattr(Post, :intro_text) %></dt>
+      <dd><%= @post.intro_text %></dd>
+      <dt><%= I18n.tattr(Post, :gallery) %></dt>
+      <dd><%= link_to @post.gallery.name, bo_gallery_path(@post.gallery) unless @post.gallery.blank? %></dd>
       <dt><%= I18n.tattr(Post, :body_html) %></dt>
       <dd><%= @post.body_html.html_safe %></dd>
     </dl>

@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20131226131714) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
+    t.text     "intro_text"
     t.text     "body_kd"
     t.text     "body_html"
     t.string   "status_cd"

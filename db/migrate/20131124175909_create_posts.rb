@@ -13,5 +13,8 @@ class CreatePosts < ActiveRecord::Migration
 
       t.timestamps
     end
+    
+    add_index :posts, :category_id
+    add_index :posts, :gallery_id
   end
 end

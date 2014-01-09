@@ -7,5 +7,8 @@ class CreateGalleryImageJoinTable < ActiveRecord::Migration
       
       t.timestamps
     end
+    
+    add_index :gallery_images, :image_id
+    add_index :gallery_images, :gallery_id
   end
 end

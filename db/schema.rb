@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(:version => 20131226131714) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "gallery_images", ["gallery_id"], :name => "index_gallery_images_on_gallery_id"
+  add_index "gallery_images", ["image_id"], :name => "index_gallery_images_on_image_id"
+
   create_table "images", :force => true do |t|
     t.string   "name"
     t.string   "alt"
@@ -63,10 +66,16 @@ ActiveRecord::Schema.define(:version => 20131226131714) do
     t.datetime "updated_at",                  :null => false
   end
 
+  add_index "posts", ["category_id"], :name => "index_posts_on_category_id"
+  add_index "posts", ["gallery_id"], :name => "index_posts_on_gallery_id"
+
   create_table "posts_tags", :id => false, :force => true do |t|
     t.integer "post_id"
     t.integer "tag_id"
   end
+
+  add_index "posts_tags", ["post_id"], :name => "index_posts_tags_on_post_id"
+  add_index "posts_tags", ["tag_id"], :name => "index_posts_tags_on_tag_id"
 
   create_table "tags", :force => true do |t|
     t.string   "name"

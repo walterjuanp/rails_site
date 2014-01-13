@@ -38,13 +38,7 @@
           <nav>
             <ul class="flexnav" data-breakpoint="800">
               <li>
-                <%= link_to I18n.tbtn('header.home'), root_path, :class => "#{active_by_controller_and_action StaticController, 'home'}" %>
-              </li>
-              <li>
                 <%= link_to I18n.tbtn('header.blog'), blog_path, :class => "#{active_by_controllers PostsController}" %>
-              </li>
-              <li>
-                <%= link_to I18n.tbtn('header.about'), about_path, :class => "#{active_by_controller_and_action StaticController, 'about'}" %>
               </li>
               <li>
                 <%= link_to I18n.tbtn('header.search'), search_path, :class => "#{active_by_controller_and_action StaticController, 'search'}" %>

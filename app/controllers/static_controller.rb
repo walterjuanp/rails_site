@@ -1,12 +1,4 @@
 class StaticController < ApplicationController
-  def home
-    
-  end
-  
-  def about
-    
-  end
-  
   def search
     @category = params[:category]
     @tags = params[:tags]

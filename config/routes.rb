@@ -1,13 +1,11 @@
 Site::Application.routes.draw do
   
-  root :to => "static#home"
+  root :to => "posts#index"
   
   #resources :posts, :only => [:index, :show]
   match 'blog'      => "posts#index", :as => :blog
   match "/blog/:id" => "posts#show",  :as => :post
   
-  match 'home'    => "static#home",   :as => :home
-  match 'about'   => "static#about",  :as => :about
   match 'search'  => "static#search", :as => :search
 
   resources :user_sessions

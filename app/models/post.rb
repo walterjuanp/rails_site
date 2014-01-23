@@ -19,6 +19,13 @@ class Post < ActiveRecord::Base
   
   before_validation :parse_body_kd_to_html
   before_validation :set_tags_by_tag_names
+
+  #
+  #
+  #
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
   
   #
   #

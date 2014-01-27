@@ -9,7 +9,7 @@
             </div>
             
             <div class="cell quote">
-              <p><%= t('quote').html_safe %></p>
+              <p><%= t('quote') %></p>
               <div class="signed">
                 <% if current_user %>
                   <%= tview('signed_as', :email => current_user.email) %>

@@ -7,8 +7,8 @@ en:
   # buttons:
   # messages:
   # errors:
-  app_name: Site
-  quote: 'Things about a <span class="strikethrough">young</span> developer'
+  app_name: Woowla
+  quote: Small things of everyday, by a developer
   blog: Blog
   there_are_n_images_in_gallery: There are %n_images% images in this gallery 
   locales:

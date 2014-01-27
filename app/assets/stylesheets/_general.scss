@@ -11,6 +11,10 @@ a, h1, h2, h3, h4, h5, h6{
   font-family: $alt-font;
 }
 
+h4{
+  font-style: italic;
+}
+
 a, a:visited, a:hover{
   text-decoration: none;
   transition: all 0.25s;

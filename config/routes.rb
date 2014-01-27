@@ -7,7 +7,7 @@ Site::Application.routes.draw do
   match "/blog/:id" => "posts#show",  :as => :post
   
   match 'search'  => "static#search", :as => :search
-
+  
   resources :user_sessions
   match 'login'   => "user_sessions#new",     :as => :login
   match 'logout'  => "user_sessions#destroy", :as => :logout
